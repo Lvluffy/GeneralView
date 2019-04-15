@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.button;
+package com.luffy.generalviewlib.custom.button;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -18,7 +18,7 @@ import com.luffy.generalviewlib.base.BaseView;
 /**
  * Created by lvlufei on 2017/1/1
  *
- * @desc 公用按钮
+ * @desc 通用按钮
  */
 public class GeneralButton extends BaseView {
     RelativeLayout layout;

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.luffy.generalviewlib.button.GeneralButton
+    <com.luffy.generalviewlib.custom.button.GeneralButton
         android:id="@+id/btn_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

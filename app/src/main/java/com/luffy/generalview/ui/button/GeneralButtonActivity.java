@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.luffy.generalview.R;
 import com.luffy.generalview.utils.DensityUtils;
-import com.luffy.generalviewlib.button.GeneralButton;
-import com.luffy.generalviewlib.button.IGeneralButton;
+import com.luffy.generalviewlib.custom.button.GeneralButton;
+import com.luffy.generalviewlib.custom.button.IGeneralButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

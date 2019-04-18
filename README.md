@@ -25,4 +25,4 @@ dependencies {
 }
 
 ## 录屏
-![rozsv-t4ab0](https://user-images.githubusercontent.com/34730376/56335047-76c01300-61cd-11e9-9c91-0a3976cb8509.gif)
+![3ygy7-6l9oj](https://user-images.githubusercontent.com/34730376/56339719-f061fc00-61e1-11e9-82f2-b82a808a7960.gif)

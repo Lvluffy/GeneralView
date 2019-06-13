@@ -1,10 +1,12 @@
 package com.luffy.generalview.ui.button;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.luffy.generalview.R;
+import com.luffy.generalview.ui.wheel.WheelViewActivity;
 import com.luffy.generalview.utils.DensityUtils;
 import com.luffy.generalviewlib.custom.button.GeneralButton;
 import com.luffy.generalviewlib.custom.button.IGeneralButton;
@@ -42,6 +44,7 @@ public class GeneralButtonActivity extends AppCompatActivity implements IGeneral
             @Override
             public void run() {
                 btnConfirm.setLoading(false);
+                startActivity(new Intent(GeneralButtonActivity.this, WheelViewActivity.class));
             }
         }, 3000);
     }

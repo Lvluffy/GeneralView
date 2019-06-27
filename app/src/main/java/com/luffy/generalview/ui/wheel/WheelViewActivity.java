@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.luffy.generalview.R;
+import com.luffy.generalviewlib.custom.wheel.WheelBean;
 import com.luffy.generalviewlib.custom.wheel.WheelView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,8 +17,6 @@ public class WheelViewActivity extends AppCompatActivity {
 
     @BindView(R.id.wheelView)
     WheelView wheelView;
-
-    private static final String[] school = new String[]{"Top5", "Top30", "Top50", "其他"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,25 @@ public class WheelViewActivity extends AppCompatActivity {
     }
 
     private void initWheelView() {
+        List<WheelBean> wheelBeanList = new ArrayList<>();
+        /*Top5*/
+        WheelBean wheelBean = new WheelBean();
+        wheelBean.setName("Top5");
+        wheelBeanList.add(wheelBean);
+        /*Top30*/
+        WheelBean wheelBean1 = new WheelBean();
+        wheelBean1.setName("Top30");
+        wheelBeanList.add(wheelBean1);
+        /*Top50*/
+        WheelBean wheelBea2 = new WheelBean();
+        wheelBea2.setName("Top50");
+        wheelBeanList.add(wheelBea2);
+        /*其他*/
+        WheelBean wheelBean3 = new WheelBean();
+        wheelBean3.setName("其他");
+        wheelBeanList.add(wheelBean3);
         wheelView.setOffset(2);
         wheelView.setSeletion(0);
-        wheelView.setItems(Arrays.asList(school));
+        wheelView.setItems(wheelBeanList);
     }
 }

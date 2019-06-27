@@ -1,5 +1,6 @@
 package com.luffy.generalviewlib.custom.wheel;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -38,7 +39,7 @@ public class WheelView extends ScrollView {
     int displayItemCount; // 每页显示的数量
     int selectedIndex = 1; // 选中项下标
 
-    List<String> items; // 文本内容集合
+    List<WheelBean> items; // 文本内容集合
 
     int initialY;
     Runnable scrollerTask;
@@ -120,7 +121,7 @@ public class WheelView extends ScrollView {
         this.offset = offset;
     }
 
-    public String getSeletedItem() {
+    public WheelBean getSeletedItem() {
         return items.get(selectedIndex);
     }
 
@@ -139,20 +140,20 @@ public class WheelView extends ScrollView {
         return selectedIndex - offset;
     }
 
-    private List<String> getItems() {
+    private List<WheelBean> getItems() {
         return items;
     }
 
-    public void setItems(List<String> list) {
+    public void setItems(List<WheelBean> list) {
         if (null == items) {
-            items = new ArrayList<String>();
+            items = new ArrayList<>();
         }
         items.clear();
         items.addAll(list);
         // 前面和后面补全
         for (int i = 0; i < offset; i++) {
-            items.add(0, "");
-            items.add("");
+            items.add(0, new WheelBean());
+            items.add(new WheelBean());
         }
         initData();
     }
@@ -160,7 +161,7 @@ public class WheelView extends ScrollView {
     private void initData() {
         displayItemCount = offset * 2 + 1;
         for (int i = 0; i < items.size(); i++) {
-            viewRoot.addView(createView(items.get(i), i));
+            viewRoot.addView(createView(items.get(i).getName(), i));
         }
         refreshItemView(0);
     }
@@ -184,7 +185,7 @@ public class WheelView extends ScrollView {
             @Override
             public void onClick(View v) {
                 if (onWheelViewSelectedViewListener != null && position == selectedIndex) {
-                    onWheelViewSelectedViewListener.onSelectedView(selectedIndex, items.get(selectedIndex));
+                    onWheelViewSelectedViewListener.onSelectedView(selectedIndex, items.get(selectedIndex).getName());
                 }
             }
         });
@@ -271,6 +272,7 @@ public class WheelView extends ScrollView {
 
             }
 
+            @SuppressLint("WrongConstant")
             @Override
             public int getOpacity() {
                 return 0;

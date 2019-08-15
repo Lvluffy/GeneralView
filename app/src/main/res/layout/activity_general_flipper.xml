@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!--设置-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.luffy.generalviewlib.custom.flipper.GeneralFlipper
+        android:id="@+id/general_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flipper_left_icon_marginLeft="@dimen/y10"
+        app:flipper_left_icon_src="@drawable/general_flipper_default"
+        app:flipper_left_icon_visibility="visible"
+        app:flipper_right_icon_marginLeft="@dimen/y10"
+        app:flipper_right_icon_marginRight="@dimen/y10"
+        app:flipper_right_icon_src="@drawable/general_flipper_default"
+        app:flipper_right_icon_visibility="visible"
+        app:flipper_root_background_resource="@drawable/bg_radius_ture_stroke_false_fff5e7_selector"
+        app:flipper_root_height="@dimen/y50"
+        app:flipper_root_marginLeft="@dimen/y10"
+        app:flipper_root_marginRight="@dimen/y10"
+        app:flipper_root_marginTop="@dimen/y10"
+        app:text_color="@color/colorPrimary"
+        app:text_layout_gravity="center_vertical"
+        app:text_size="14"
+        app:view_flipper_autoStart="false"
+        app:view_flipper_inAnimation="@anim/flipper_in"
+        app:view_flipper_interval="3000"
+        app:view_flipper_outAnimation="@anim/flipper_out" />
+
+</LinearLayout>
+

@@ -48,6 +48,16 @@ public class GeneralButton extends BaseView {
         imageView = (ImageView) findViewById(R.id.base_btn_icon);
     }
 
+    @Override
+    public void initAttrs(AttributeSet attrs) {
+
+    }
+
+    @Override
+    public void bindAttrs() {
+
+    }
+
     /**
      * 设置文字内容
      *

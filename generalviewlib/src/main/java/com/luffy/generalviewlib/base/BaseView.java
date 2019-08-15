@@ -24,12 +24,14 @@ public abstract class BaseView extends LinearLayout implements IBaseView {
     public BaseView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.mContext = context;
-        init();
+        init(attrs);
     }
 
-    protected void init() {
+    protected void init(AttributeSet attrs) {
         mView = LayoutInflater.from(getContext()).inflate(setLayoutView(), this, true);
         initView();
+        initAttrs(attrs);
+        bindAttrs();
     }
 
     public View getView() {

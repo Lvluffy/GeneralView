@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.wheel.WheelViewActivity" />
+        <activity android:name=".ui.flipper.GeneralFlipperActivity" />
     </application>
 
 </manifest>

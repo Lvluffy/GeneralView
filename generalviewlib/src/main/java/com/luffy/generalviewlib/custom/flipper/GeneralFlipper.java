@@ -253,6 +253,14 @@ public class GeneralFlipper extends BaseView {
         return viewFlipper;
     }
 
+    public ImageView getFlipperLeftIcon() {
+        return flipperLeftIcon;
+    }
+
+    public ImageView getFlipperRightIcon() {
+        return flipperRightIcon;
+    }
+
     /**
      * 绑定数据
      *

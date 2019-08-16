@@ -56,6 +56,12 @@
         <attr name="flipper_text_maxLines" format="integer" />
         <attr name="flipper_text_color" format="color" />
         <attr name="flipper_text_size" format="integer" />
+        <attr name="flipper_text_textStyle" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+            <enum name="bold_italic" value="3" />
+        </attr>
         <attr name="flipper_text_lineSpacingExtra" format="dimension" />
 
     </declare-styleable>

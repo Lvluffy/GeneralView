@@ -83,6 +83,7 @@ public class GeneralFlipper extends BaseView {
     int flipper_text_maxLines;
     int flipper_text_color;
     float flipper_text_size;
+    int flipper_text_textStyle;
     float flipper_text_lineSpacingExtra;
 
     public GeneralFlipper(Context context) {
@@ -161,13 +162,15 @@ public class GeneralFlipper extends BaseView {
         view_flipper_autoStart = attributes.getBoolean(R.styleable.GeneralFlipper_view_flipper_autoStart, true);
 
         /**内容*/
-        flipper_text_gravity = attributes.getInt(R.styleable.GeneralFlipper_flipper_text_gravity, Gravity.CENTER_VERTICAL);
+        flipper_text_gravity = attributes.getInt(R.styleable.GeneralFlipper_flipper_text_gravity, 1);
         /*最大行数*/
         flipper_text_maxLines = attributes.getInt(R.styleable.GeneralFlipper_flipper_text_maxLines, 1);
         /*颜色*/
         flipper_text_color = attributes.getColor(R.styleable.GeneralFlipper_flipper_text_color, defaultTextColor);
         /*大小*/
         flipper_text_size = attributes.getInteger(R.styleable.GeneralFlipper_flipper_text_size, 14);
+        /*字体*/
+        flipper_text_textStyle = attributes.getInt(R.styleable.GeneralFlipper_flipper_text_textStyle, 0);
         /*文字行间距*/
         flipper_text_lineSpacingExtra = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_text_lineSpacingExtra, 5);
 
@@ -278,8 +281,6 @@ public class GeneralFlipper extends BaseView {
             viewFlipper.stopFlipping();
             for (String content : data) {
                 TextView textView = new TextView(mContext);
-                textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-                textView.setMaxLines(flipper_text_maxLines);
                 switch (flipper_text_gravity) {
                     case 1:
                         textView.setGravity(Gravity.LEFT);
@@ -297,6 +298,21 @@ public class GeneralFlipper extends BaseView {
                         textView.setGravity(Gravity.CENTER_HORIZONTAL);
                         break;
                 }
+                switch (flipper_text_textStyle) {
+                    case 0:
+                        textView.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+                        break;
+                    case 1:
+                        textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+                        break;
+                    case 2:
+                        textView.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
+                        break;
+                    case 3:
+                        textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
+                        break;
+                }
+                textView.setMaxLines(flipper_text_maxLines);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
                 textView.setTextColor(flipper_text_color);
                 textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, flipper_text_size);

@@ -79,12 +79,11 @@ public class GeneralFlipper extends BaseView {
     int view_flipper_outAnimation;
     boolean view_flipper_autoStart;
     /*内容*/
-    int text_layout_gravity;
-    int text_maxLines;
-    String text_content;
-    int text_color;
-    float text_size;
-    float text_lineSpacingExtra;
+    int flipper_text_gravity;
+    int flipper_text_maxLines;
+    int flipper_text_color;
+    float flipper_text_size;
+    float flipper_text_lineSpacingExtra;
 
     public GeneralFlipper(Context context) {
         super(context);
@@ -162,17 +161,15 @@ public class GeneralFlipper extends BaseView {
         view_flipper_autoStart = attributes.getBoolean(R.styleable.GeneralFlipper_view_flipper_autoStart, true);
 
         /**内容*/
-        text_layout_gravity = attributes.getInt(R.styleable.GeneralFlipper_text_layout_gravity, Gravity.CENTER_VERTICAL);
+        flipper_text_gravity = attributes.getInt(R.styleable.GeneralFlipper_flipper_text_gravity, Gravity.CENTER_VERTICAL);
         /*最大行数*/
-        text_maxLines = attributes.getInt(R.styleable.GeneralFlipper_text_maxLines, 1);
-        /*内容*/
-        text_content = attributes.getString(R.styleable.GeneralFlipper_text_content);
+        flipper_text_maxLines = attributes.getInt(R.styleable.GeneralFlipper_flipper_text_maxLines, 1);
         /*颜色*/
-        text_color = attributes.getColor(R.styleable.GeneralFlipper_text_color, defaultTextColor);
+        flipper_text_color = attributes.getColor(R.styleable.GeneralFlipper_flipper_text_color, defaultTextColor);
         /*大小*/
-        text_size = attributes.getInteger(R.styleable.GeneralFlipper_text_size, 14);
+        flipper_text_size = attributes.getInteger(R.styleable.GeneralFlipper_flipper_text_size, 14);
         /*文字行间距*/
-        text_lineSpacingExtra = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_text_lineSpacingExtra, 5);
+        flipper_text_lineSpacingExtra = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_text_lineSpacingExtra, 5);
 
         /**回收*/
         attributes.recycle();
@@ -274,8 +271,8 @@ public class GeneralFlipper extends BaseView {
             for (String content : data) {
                 TextView textView = new TextView(mContext);
                 textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-                textView.setMaxLines(text_maxLines);
-                switch (text_layout_gravity) {
+                textView.setMaxLines(flipper_text_maxLines);
+                switch (flipper_text_gravity) {
                     case 1:
                         textView.setGravity(Gravity.LEFT);
                         break;
@@ -293,8 +290,8 @@ public class GeneralFlipper extends BaseView {
                         break;
                 }
                 textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setTextColor(text_color);
-                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, text_size);
+                textView.setTextColor(flipper_text_color);
+                textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, flipper_text_size);
                 textView.setText(content);
                 viewFlipper.addView(textView);
             }

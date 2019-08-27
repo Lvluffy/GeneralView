@@ -1,11 +1,13 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <!--应用主题-->
+    <style name="AppTheme" parent="@style/BaseLayerTheme"></style>
+
+    <!--子项样式(父)-->
+    <style name="base_item_style_base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/y50</item>
+        <item name="android:background">@color/white</item>
     </style>
 
 </resources>

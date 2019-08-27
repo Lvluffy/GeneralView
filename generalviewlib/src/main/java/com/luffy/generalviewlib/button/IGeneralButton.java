@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.custom.button;
+package com.luffy.generalviewlib.button;
 
 /**
  * Created by lvlufei on 2019/3/28

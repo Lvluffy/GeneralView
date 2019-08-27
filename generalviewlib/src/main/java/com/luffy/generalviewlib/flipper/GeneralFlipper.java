@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.custom.flipper;
+package com.luffy.generalviewlib.flipper;
 
 import android.content.Context;
 import android.content.res.TypedArray;

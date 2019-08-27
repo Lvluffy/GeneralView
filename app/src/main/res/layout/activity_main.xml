@@ -4,14 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.luffy.generalviewlib.custom.button.GeneralButton
-        android:id="@+id/btn_confirm"
+    <com.luffy.generalviewlib.button.GeneralButton
+        android:id="@+id/btn_wheelView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/y15" />
 
-    <com.luffy.generalviewlib.custom.button.GeneralButton
+    <com.luffy.generalviewlib.button.GeneralButton
         android:id="@+id/btn_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/y15" />
+
+    <com.luffy.generalviewlib.button.GeneralButton
+        android:id="@+id/btn_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/y15" />

@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.custom.wheel;
+package com.luffy.generalviewlib.wheel;
 
 import java.io.Serializable;
 

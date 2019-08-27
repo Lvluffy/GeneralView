@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.luffy.generalview.R;
-import com.luffy.generalviewlib.custom.flipper.GeneralFlipper;
+import com.luffy.generalviewlib.flipper.GeneralFlipper;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,6 +13,7 @@
     <color name="color_BBBBBB">#BBBBBB</color>
     <color name="color_F6F6F6">#F6F6F6</color>
     <color name="color_FFFFFF">#FFFFFF</color>
+    <color name="color_FAFAFA">#FAFAFA</color>
 
     <!--generalButton<通用按钮><禁用>-->
     <color name="general_btn_disable">@color/color_BBBBBB</color>

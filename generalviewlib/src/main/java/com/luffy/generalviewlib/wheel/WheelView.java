@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.custom.wheel;
+package com.luffy.generalviewlib.wheel;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

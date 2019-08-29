@@ -136,6 +136,12 @@ public class GeneralEmpty extends BaseView {
         return this;
     }
 
+    public GeneralEmpty setEmptyBtnWidthHeight(int width, int height) {
+        emptyBtn.setVisibility(VISIBLE);
+        emptyBtn.setLayoutParams(new LayoutParams(width, height));
+        return this;
+    }
+
     public GeneralEmpty setEmptyBtn(int resId, final OnClickListener mOnClickListener) {
         emptyBtn.setVisibility(VISIBLE);
         emptyBtn.setText(resId);

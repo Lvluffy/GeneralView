@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.extend.textSpan;
+package com.luffy.generalviewlib.inheritedView.textSpan;
 
 /**
  * Created by lvlufei on 2018/6/8

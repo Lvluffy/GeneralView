@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.empty;
+package com.luffy.generalviewlib.combinationView.child.empty;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.luffy.generalviewlib.R;
-import com.luffy.generalviewlib.base.BaseView;
+import com.luffy.generalviewlib.combinationView.base.BaseCombinationView;
 
 /**
  * Created by lvlufei on 2019/8/27
@@ -20,7 +20,7 @@ import com.luffy.generalviewlib.base.BaseView;
  * @name 通用空布局
  * @desc
  */
-public class GeneralEmpty extends BaseView {
+public class GeneralEmpty extends BaseCombinationView {
 
     LinearLayout emptyLayout;
     ImageView emptyImg;

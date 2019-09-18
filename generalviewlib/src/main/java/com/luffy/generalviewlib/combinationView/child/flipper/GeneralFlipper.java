@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.flipper;
+package com.luffy.generalviewlib.combinationView.child.flipper;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.luffy.generalviewlib.R;
-import com.luffy.generalviewlib.base.BaseView;
+import com.luffy.generalviewlib.combinationView.base.BaseCombinationView;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ import java.util.List;
  * @name 通用翻滚控件
  * @desc
  */
-public class GeneralFlipper extends BaseView {
+public class GeneralFlipper extends BaseCombinationView {
 
     /**
      * 组合控件

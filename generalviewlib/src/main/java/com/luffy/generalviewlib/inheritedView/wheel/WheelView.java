@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.wheel;
+package com.luffy.generalviewlib.inheritedView.wheel;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

@@ -1,6 +1,8 @@
-package com.luffy.generalviewlib.extend.textWatcher;
+package com.luffy.generalviewlib.inheritedView.textWatcher.child;
 
 import android.widget.EditText;
+
+import com.luffy.generalviewlib.inheritedView.textWatcher.base.BaseTextWatcher;
 
 /**
  * Created by lvlufei on 2019/8/29
@@ -8,7 +10,7 @@ import android.widget.EditText;
  * @name 密码（英文、数字）-文本观察者
  * @desc
  */
-public class PasswordTextWatcher extends GeneralTextWatcher {
+public class PasswordTextWatcher extends BaseTextWatcher {
 
     public PasswordTextWatcher(EditText editText) {
         super(editText);

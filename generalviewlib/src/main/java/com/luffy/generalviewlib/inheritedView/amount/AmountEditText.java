@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.extend.amount;
+package com.luffy.generalviewlib.inheritedView.amount;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;

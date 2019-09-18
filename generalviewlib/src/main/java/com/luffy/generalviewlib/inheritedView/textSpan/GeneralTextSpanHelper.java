@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.extend.textSpan;
+package com.luffy.generalviewlib.inheritedView.textSpan;
 
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;

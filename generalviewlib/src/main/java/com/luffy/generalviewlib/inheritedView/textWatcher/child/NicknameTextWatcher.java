@@ -1,6 +1,8 @@
-package com.luffy.generalviewlib.extend.textWatcher;
+package com.luffy.generalviewlib.inheritedView.textWatcher.child;
 
 import android.widget.EditText;
+
+import com.luffy.generalviewlib.inheritedView.textWatcher.base.BaseTextWatcher;
 
 /**
  * Created by lvlufei on 2019/8/29
@@ -8,7 +10,7 @@ import android.widget.EditText;
  * @name 昵称（中英文、数字-限制15个字符）-文本观察者
  * @desc
  */
-public class NicknameTextWatcher extends GeneralTextWatcher {
+public class NicknameTextWatcher extends BaseTextWatcher {
 
     public NicknameTextWatcher(EditText editText) {
         super(editText);

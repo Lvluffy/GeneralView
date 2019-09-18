@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import com.luffy.generalview.R;
 import com.luffy.generalview.manager.TestDataManager;
 import com.luffy.generalview.model.GeneralEmptyBean;
-import com.luffy.generalviewlib.empty.GeneralEmpty;
+import com.luffy.generalviewlib.combinationView.child.empty.GeneralEmpty;
 import com.luffy.uilib.android.list.loader.BaseLayerLoadMoreView;
 import com.luffy.uilib.template.listView.general.BaseLayerListActivity;
 import com.luffy.utilslib.utils.DensityUtils;
@@ -14,6 +14,12 @@ import com.luffy.utilslib.utils.RxTimerUtils;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Created by lvlufei on 2019/9/18
+ *
+ * @name 空布局
+ * @desc
+ */
 public class GeneralEmptyActivity extends BaseLayerListActivity {
 
     /*适配器*/

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.luffy.generalview.R;
-import com.luffy.generalviewlib.flipper.GeneralFlipper;
+import com.luffy.generalviewlib.combinationView.child.flipper.GeneralFlipper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +14,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * Created by lvlufei on 2019/9/18
+ *
+ * @name 消息轮动
+ * @desc
+ */
 public class GeneralFlipperActivity extends AppCompatActivity {
 
     @BindView(R.id.general_flipper)

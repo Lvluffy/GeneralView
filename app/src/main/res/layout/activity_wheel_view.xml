@@ -23,7 +23,7 @@
         android:paddingRight="@dimen/x37"
         android:paddingTop="@dimen/y50">
 
-        <com.luffy.generalviewlib.wheel.WheelView
+        <com.luffy.generalviewlib.inheritedView.wheel.WheelView
             android:id="@+id/wheelView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

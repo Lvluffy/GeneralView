@@ -1,6 +1,8 @@
-package com.luffy.generalviewlib.extend.textWatcher;
+package com.luffy.generalviewlib.inheritedView.textWatcher.child;
 
 import android.widget.EditText;
+
+import com.luffy.generalviewlib.inheritedView.textWatcher.base.BaseTextWatcher;
 
 /**
  * Created by lvlufei on 2019/8/29
@@ -8,7 +10,7 @@ import android.widget.EditText;
  * @name 过滤表情（中英文、数字、空格）-文本观察者-文本观察者
  * @desc
  */
-public class EmojiTextWatcher extends GeneralTextWatcher {
+public class EmojiTextWatcher extends BaseTextWatcher {
     public EmojiTextWatcher(EditText editText) {
         super(editText);
     }

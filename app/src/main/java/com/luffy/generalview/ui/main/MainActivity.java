@@ -10,14 +10,20 @@ import com.luffy.generalview.R;
 import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
 import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
 import com.luffy.generalview.ui.wheel.WheelViewActivity;
-import com.luffy.generalviewlib.button.GeneralButton;
-import com.luffy.generalviewlib.button.IGeneralButton;
+import com.luffy.generalviewlib.combinationView.child.button.GeneralButton;
+import com.luffy.generalviewlib.combinationView.child.button.IGeneralButton;
 import com.luffy.utilslib.utils.DensityUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * Created by lvlufei on 2019/9/18
+ *
+ * @name 主界面
+ * @desc
+ */
 public class MainActivity extends AppCompatActivity implements IGeneralButton {
 
     @BindView(R.id.btn_wheelView)
@@ -60,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_wheelView:
+                /*转动控件*/
                 btnConfirm.setLoading(true);
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -70,9 +77,11 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
                 }, 3000);
                 break;
             case R.id.btn_flipper:
+                /*消息轮动*/
                 startActivity(new Intent(MainActivity.this, GeneralFlipperActivity.class));
                 break;
             case R.id.btn_empty:
+                /*空布局*/
                 startActivity(new Intent(MainActivity.this, GeneralEmptyActivity.class));
                 break;
         }

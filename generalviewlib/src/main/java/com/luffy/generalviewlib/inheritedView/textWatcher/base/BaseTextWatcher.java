@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.extend.textWatcher;
+package com.luffy.generalviewlib.inheritedView.textWatcher.base;
 
 import android.text.Editable;
 import android.text.TextUtils;
@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  *
  * @desc 文本观察者
  */
-public abstract class GeneralTextWatcher implements TextWatcher {
+public abstract class BaseTextWatcher implements TextWatcher {
 
     private boolean mIsMatch;
     private CharSequence mResult;
@@ -21,7 +21,7 @@ public abstract class GeneralTextWatcher implements TextWatcher {
     private int mSelectionEnd;
     private EditText mEditText;
 
-    public GeneralTextWatcher(EditText editText) {
+    public BaseTextWatcher(EditText editText) {
         mEditText = editText;
     }
 

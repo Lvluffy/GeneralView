@@ -1,4 +1,4 @@
-package com.luffy.generalviewlib.button;
+package com.luffy.generalviewlib.combinationView.child.button;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -13,14 +13,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.luffy.generalviewlib.R;
-import com.luffy.generalviewlib.base.BaseView;
+import com.luffy.generalviewlib.combinationView.base.BaseCombinationView;
 
 /**
  * Created by lvlufei on 2017/1/1
  *
  * @desc 通用按钮
  */
-public class GeneralButton extends BaseView {
+public class GeneralButton extends BaseCombinationView {
     RelativeLayout layout;
     TextView textView;
     ImageView imageView;

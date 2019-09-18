@@ -1,13 +1,13 @@
-package com.luffy.generalviewlib.base;
+package com.luffy.generalviewlib.combinationView.base;
 
 import android.util.AttributeSet;
 
 /**
  * Created by lvlufei on 2019/3/28
  *
- * @desc 公共的自定义View-回调监听
+ * @desc 公共的自定义组合控件-回调监听
  */
-public interface IBaseView {
+public interface IBaseCombinationView {
     /**
      * 设置布局文件
      *

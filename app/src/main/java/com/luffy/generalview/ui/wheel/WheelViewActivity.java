@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.luffy.generalview.R;
-import com.luffy.generalviewlib.wheel.WheelBean;
-import com.luffy.generalviewlib.wheel.WheelView;
+import com.luffy.generalviewlib.inheritedView.wheel.WheelBean;
+import com.luffy.generalviewlib.inheritedView.wheel.WheelView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Created by lvlufei on 2019/9/18
+ *
+ * @name 转动控件
+ * @desc
+ */
 public class WheelViewActivity extends AppCompatActivity {
 
     @BindView(R.id.wheelView)

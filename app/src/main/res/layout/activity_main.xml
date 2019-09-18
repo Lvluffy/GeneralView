@@ -2,25 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/y15"
+    android:paddingRight="@dimen/y15">
 
-    <com.luffy.generalviewlib.button.GeneralButton
+    <!--转动控件-->
+    <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_wheelView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15" />
 
-    <com.luffy.generalviewlib.button.GeneralButton
+    <!--消息轮动-->
+    <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_flipper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15" />
 
-    <com.luffy.generalviewlib.button.GeneralButton
+    <!--空布局-->
+    <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15" />
 
 </LinearLayout>
 

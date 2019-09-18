@@ -43,6 +43,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     /**support*/
-    compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
-    compile "com.android.support:support-v4:$rootProject.supportVersion"
+    provided "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    provided "com.android.support:support-v4:$rootProject.supportVersion"
 }

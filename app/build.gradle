@@ -39,6 +39,8 @@ dependencies {
     /**support*/
     compile "com.android.support.constraint:constraint-layout:$rootProject.supportConstraintLayout"
     compile "com.android.support:recyclerview-v7:$rootProject.supportVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    compile "com.android.support:support-v4:$rootProject.supportVersion"
     /**仓库*/
     /*butterknife*/
     compile 'com.jakewharton:butterknife:8.8.1'

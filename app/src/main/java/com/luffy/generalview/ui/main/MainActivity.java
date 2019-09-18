@@ -9,6 +9,7 @@ import android.view.View;
 import com.luffy.generalview.R;
 import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
 import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
+import com.luffy.generalview.ui.tag.GeneralTagActivity;
 import com.luffy.generalview.ui.wheel.WheelViewActivity;
 import com.luffy.generalviewlib.combinationView.child.button.GeneralButton;
 import com.luffy.generalviewlib.combinationView.child.button.IGeneralButton;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
     GeneralButton btnFlipper;
     @BindView(R.id.btn_empty)
     GeneralButton btnEmpty;
+    @BindView(R.id.btn_tag)
+    GeneralButton btnTag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +63,18 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
         btnEmpty.setTextSize(14);
         btnEmpty.setTextColor(R.color.base_btn_confirm_textcolor);
         btnEmpty.setEnable(true);
+
+        btnTag.setLayoutHeight(DensityUtils.getInstance().dp2px(this, 45));
+        btnTag.setText("标签");
+        btnTag.setTextSize(14);
+        btnTag.setTextColor(R.color.base_btn_confirm_textcolor);
+        btnTag.setEnable(true);
     }
 
-    @OnClick({R.id.btn_wheelView, R.id.btn_flipper, R.id.btn_empty})
+    @OnClick({R.id.btn_wheelView,
+            R.id.btn_flipper,
+            R.id.btn_empty,
+            R.id.btn_tag})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_wheelView:
@@ -83,6 +95,10 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
             case R.id.btn_empty:
                 /*空布局*/
                 startActivity(new Intent(MainActivity.this, GeneralEmptyActivity.class));
+                break;
+            case R.id.btn_tag:
+                /*标签*/
+                startActivity(new Intent(MainActivity.this, GeneralTagActivity.class));
                 break;
         }
     }

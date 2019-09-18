@@ -9,7 +9,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--主界面-->
+
+        <!-- 主界面 -->
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,12 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--转动控件-->
+        <!-- 转动控件 -->
         <activity android:name=".ui.wheel.WheelViewActivity" />
-        <!--消息轮动-->
+        <!-- 消息轮动 -->
         <activity android:name=".ui.flipper.GeneralFlipperActivity" />
-        <!--空布局-->
+        <!-- 空布局 -->
         <activity android:name=".ui.empty.GeneralEmptyActivity" />
+        <!--标签-->
+        <activity android:name=".ui.tag.GeneralTagActivity" />
     </application>
 
 </manifest>

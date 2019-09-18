@@ -9,6 +9,7 @@ import android.view.View;
 import com.luffy.generalview.R;
 import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
 import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
+import com.luffy.generalview.ui.ratingBar.GeneralRatingBarActivity;
 import com.luffy.generalview.ui.tag.GeneralTagActivity;
 import com.luffy.generalview.ui.wheel.WheelViewActivity;
 import com.luffy.generalviewlib.combinationView.child.button.GeneralButton;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
     GeneralButton btnEmpty;
     @BindView(R.id.btn_tag)
     GeneralButton btnTag;
+    @BindView(R.id.btn_ratingBar)
+    GeneralButton btnRatingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +72,19 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
         btnTag.setTextSize(14);
         btnTag.setTextColor(R.color.base_btn_confirm_textcolor);
         btnTag.setEnable(true);
+
+        btnRatingBar.setLayoutHeight(DensityUtils.getInstance().dp2px(this, 45));
+        btnRatingBar.setText("星级评分");
+        btnRatingBar.setTextSize(14);
+        btnRatingBar.setTextColor(R.color.base_btn_confirm_textcolor);
+        btnRatingBar.setEnable(true);
     }
 
     @OnClick({R.id.btn_wheelView,
             R.id.btn_flipper,
             R.id.btn_empty,
-            R.id.btn_tag})
+            R.id.btn_tag,
+            R.id.btn_ratingBar})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_wheelView:
@@ -99,6 +109,10 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
             case R.id.btn_tag:
                 /*标签*/
                 startActivity(new Intent(MainActivity.this, GeneralTagActivity.class));
+                break;
+            case R.id.btn_ratingBar:
+                /*星级评分*/
+                startActivity(new Intent(MainActivity.this, GeneralRatingBarActivity.class));
                 break;
         }
     }

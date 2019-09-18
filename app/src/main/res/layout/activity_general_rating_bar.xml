@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="旋转动画" />
+
+        <com.luffy.generalviewlib.customView.ratingBar.child.RatingBarBaseAnimationRotation
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srb_clearRatingEnabled="true"
+            app:srb_clickable="true"
+            app:srb_drawableEmpty="@drawable/general_rating_bar_empty"
+            app:srb_drawableFilled="@drawable/general_rating_bar_filled"
+            app:srb_isIndicator="false"
+            app:srb_numStars="5"
+            app:srb_rating="0"
+            app:srb_scrollable="false"
+            app:srb_starHeight="20dp"
+            app:srb_starPadding="10dp"
+            app:srb_starWidth="20dp"
+            app:srb_stepSize="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="缩放动画" />
+
+        <com.luffy.generalviewlib.customView.ratingBar.child.RatingBarBaseAnimationScale
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srb_clearRatingEnabled="true"
+            app:srb_clickable="true"
+            app:srb_drawableEmpty="@drawable/general_rating_bar_empty"
+            app:srb_drawableFilled="@drawable/general_rating_bar_filled"
+            app:srb_isIndicator="false"
+            app:srb_numStars="5"
+            app:srb_rating="0"
+            app:srb_scrollable="false"
+            app:srb_starHeight="20dp"
+            app:srb_starPadding="10dp"
+            app:srb_starWidth="20dp"
+            app:srb_stepSize="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

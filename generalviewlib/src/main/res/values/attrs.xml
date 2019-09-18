@@ -67,7 +67,7 @@
     </declare-styleable>
 
     <!--通用标签控件-->
-    <declare-styleable name="TagCloudView">
+    <declare-styleable name="TagView">
         <attr name="tcvBackground" format="reference" />
         <attr name="tcvTextColor" format="color" />
         <attr name="tcvBorder" format="dimension" />
@@ -98,6 +98,14 @@
         <attr name="srb_starWidth" format="dimension" />
         <attr name="srb_starHeight" format="dimension" />
         <attr name="srb_stepSize" format="float" />
+    </declare-styleable>
+
+    <!--播放中控件-->
+    <declare-styleable name="PlayingIcon">
+        <attr name="pointer_color" format="color" />
+        <attr name="pointer_num" format="integer" />
+        <attr name="pointer_width" format="float" />
+        <attr name="pointer_speed" format="integer" />
     </declare-styleable>
 
 </resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:voisePlayingIconAttr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!--直播中图标-->
+    <com.luffy.generalviewlib.customView.playing.PlayingIcon
+        android:id="@+id/playing_icon"
+        android:layout_width="18dp"
+        android:layout_height="15dp"
+        android:layout_centerVertical="true"
+        android:padding="3dp"
+        android:visibility="visible"
+        voisePlayingIconAttr:color="#FF7033"
+        voisePlayingIconAttr:pointer_num="4"
+        voisePlayingIconAttr:pointer_width="2" />
+
+</LinearLayout>

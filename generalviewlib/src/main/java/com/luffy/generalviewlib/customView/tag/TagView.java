@@ -85,23 +85,23 @@ public class TagView extends ViewGroup {
         mInflater = LayoutInflater.from(context);
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
-                R.styleable.TagCloudView,
+                R.styleable.TagView,
                 defStyleAttr,
                 defStyleAttr
         );
-        mTagSize = a.getInteger(R.styleable.TagCloudView_tcvTextSize, DEFAULT_TEXT_SIZE);
-        mTagColor = a.getColor(R.styleable.TagCloudView_tcvTextColor, DEFAULT_TEXT_COLOR);
-        mBackground = a.getResourceId(R.styleable.TagCloudView_tcvBackground, DEFAULT_TEXT_BACKGROUND);
-        mViewBorder = a.getDimensionPixelSize(R.styleable.TagCloudView_tcvBorder, DEFAULT_VIEW_BORDER);
-        mTagBorderHor = a.getDimensionPixelSize(R.styleable.TagCloudView_tcvItemBorderHorizontal, DEFAULT_TEXT_BORDER_HORIZONTAL);
-        mTagBorderVer = a.getDimensionPixelSize(R.styleable.TagCloudView_tcvItemBorderVertical, DEFAULT_TEXT_BORDER_VERTICAL);
-        mCanTagClick = a.getBoolean(R.styleable.TagCloudView_tcvCanTagClick, DEFAULT_CAN_TAG_CLICK);
-        mRightImageResId = a.getResourceId(R.styleable.TagCloudView_tcvRightResId, DEFAULT_RIGHT_IMAGE);
-        mSingleLine = a.getBoolean(R.styleable.TagCloudView_tcvSingleLine, DEFAULT_SINGLE_LINE);
-        mShowRightImage = a.getBoolean(R.styleable.TagCloudView_tcvShowRightImg, DEFAULT_SHOW_RIGHT_IMAGE);
-        mShowEndText = a.getBoolean(R.styleable.TagCloudView_tcvShowEndText, DEFAULT_SHOW_END_TEXT);
-        endTextString = a.getString(R.styleable.TagCloudView_tcvEndText);
-        mTagResId = a.getResourceId(R.styleable.TagCloudView_tcvTagResId, DEFAULT_TAG_RESID);
+        mTagSize = a.getInteger(R.styleable.TagView_tcvTextSize, DEFAULT_TEXT_SIZE);
+        mTagColor = a.getColor(R.styleable.TagView_tcvTextColor, DEFAULT_TEXT_COLOR);
+        mBackground = a.getResourceId(R.styleable.TagView_tcvBackground, DEFAULT_TEXT_BACKGROUND);
+        mViewBorder = a.getDimensionPixelSize(R.styleable.TagView_tcvBorder, DEFAULT_VIEW_BORDER);
+        mTagBorderHor = a.getDimensionPixelSize(R.styleable.TagView_tcvItemBorderHorizontal, DEFAULT_TEXT_BORDER_HORIZONTAL);
+        mTagBorderVer = a.getDimensionPixelSize(R.styleable.TagView_tcvItemBorderVertical, DEFAULT_TEXT_BORDER_VERTICAL);
+        mCanTagClick = a.getBoolean(R.styleable.TagView_tcvCanTagClick, DEFAULT_CAN_TAG_CLICK);
+        mRightImageResId = a.getResourceId(R.styleable.TagView_tcvRightResId, DEFAULT_RIGHT_IMAGE);
+        mSingleLine = a.getBoolean(R.styleable.TagView_tcvSingleLine, DEFAULT_SINGLE_LINE);
+        mShowRightImage = a.getBoolean(R.styleable.TagView_tcvShowRightImg, DEFAULT_SHOW_RIGHT_IMAGE);
+        mShowEndText = a.getBoolean(R.styleable.TagView_tcvShowEndText, DEFAULT_SHOW_END_TEXT);
+        endTextString = a.getString(R.styleable.TagView_tcvEndText);
+        mTagResId = a.getResourceId(R.styleable.TagView_tcvTagResId, DEFAULT_TAG_RESID);
         a.recycle();
     }
 

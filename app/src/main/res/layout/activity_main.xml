@@ -41,5 +41,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/y15" />
 
+    <!--播放中控件-->
+    <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
+        android:id="@+id/btn_playing_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y15" />
+
 </LinearLayout>
 

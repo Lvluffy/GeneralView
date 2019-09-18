@@ -9,6 +9,7 @@ import android.view.View;
 import com.luffy.generalview.R;
 import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
 import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
+import com.luffy.generalview.ui.playingIcon.PlayingIconActivity;
 import com.luffy.generalview.ui.ratingBar.GeneralRatingBarActivity;
 import com.luffy.generalview.ui.tag.GeneralTagActivity;
 import com.luffy.generalview.ui.wheel.WheelViewActivity;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
     GeneralButton btnTag;
     @BindView(R.id.btn_ratingBar)
     GeneralButton btnRatingBar;
+    @BindView(R.id.btn_playing_icon)
+    GeneralButton btnPlayingIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +81,21 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
         btnRatingBar.setTextSize(14);
         btnRatingBar.setTextColor(R.color.base_btn_confirm_textcolor);
         btnRatingBar.setEnable(true);
+
+        btnPlayingIcon.setLayoutHeight(DensityUtils.getInstance().dp2px(this, 45));
+        btnPlayingIcon.setText("播放中控件");
+        btnPlayingIcon.setTextSize(14);
+        btnPlayingIcon.setTextColor(R.color.base_btn_confirm_textcolor);
+        btnPlayingIcon.setEnable(true);
     }
 
     @OnClick({R.id.btn_wheelView,
             R.id.btn_flipper,
             R.id.btn_empty,
             R.id.btn_tag,
-            R.id.btn_ratingBar})
+            R.id.btn_ratingBar,
+            R.id.btn_playing_icon
+    })
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_wheelView:
@@ -113,6 +124,10 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
             case R.id.btn_ratingBar:
                 /*星级评分*/
                 startActivity(new Intent(MainActivity.this, GeneralRatingBarActivity.class));
+                break;
+            case R.id.btn_playing_icon:
+                /*播放中控件*/
+                startActivity(new Intent(MainActivity.this, PlayingIconActivity.class));
                 break;
         }
     }

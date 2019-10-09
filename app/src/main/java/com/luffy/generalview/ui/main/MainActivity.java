@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.luffy.generalview.R;
+import com.luffy.generalview.ui.bottombar.BottomBarActivity;
 import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
 import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
 import com.luffy.generalview.ui.playingIcon.PlayingIconActivity;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
     GeneralButton btnRatingBar;
     @BindView(R.id.btn_playing_icon)
     GeneralButton btnPlayingIcon;
+    @BindView(R.id.btn_bottom_bar)
+    GeneralButton btnBottomBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,12 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
         btnPlayingIcon.setTextSize(14);
         btnPlayingIcon.setTextColor(R.color.base_btn_confirm_textcolor);
         btnPlayingIcon.setEnable(true);
+
+        btnBottomBar.setLayoutHeight(DensityUtils.getInstance().dp2px(this, 45));
+        btnBottomBar.setText("底部栏");
+        btnBottomBar.setTextSize(14);
+        btnBottomBar.setTextColor(R.color.base_btn_confirm_textcolor);
+        btnBottomBar.setEnable(true);
     }
 
     @OnClick({R.id.btn_wheelView,
@@ -94,7 +103,8 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
             R.id.btn_empty,
             R.id.btn_tag,
             R.id.btn_ratingBar,
-            R.id.btn_playing_icon
+            R.id.btn_playing_icon,
+            R.id.btn_bottom_bar
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -128,6 +138,10 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
             case R.id.btn_playing_icon:
                 /*播放中控件*/
                 startActivity(new Intent(MainActivity.this, PlayingIconActivity.class));
+                break;
+            case R.id.btn_bottom_bar :
+                /*底部栏*/
+                startActivity(new Intent(MainActivity.this, BottomBarActivity.class));
                 break;
         }
     }

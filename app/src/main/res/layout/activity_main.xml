@@ -48,5 +48,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/y15" />
 
+    <!--底部栏-->
+    <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
+        android:id="@+id/btn_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y15" />
+
 </LinearLayout>
 

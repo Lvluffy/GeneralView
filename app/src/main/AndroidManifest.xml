@@ -9,7 +9,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <!-- 主界面 -->
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
@@ -29,6 +28,10 @@
         <activity android:name=".ui.ratingBar.GeneralRatingBarActivity" />
         <!--播放中控件-->
         <activity android:name=".ui.playingIcon.PlayingIconActivity" />
+        <!--底部栏-->
+        <activity android:name=".ui.bottombar.BottomBarActivity" />
+        <activity android:name=".ui.bottombar.ViewPagerActivity" />
+        <activity android:name=".ui.bottombar.WithoutViewPagerActivity" />
     </application>
 
 </manifest>

@@ -18,4 +18,9 @@
     <!--generalButton<通用按钮><禁用>-->
     <color name="general_btn_disable">@color/color_BBBBBB</color>
 
+    <!--底部栏布局-->
+    <color name="bbl_999999">#999999</color>
+    <color name="bbl_ff0000">#ff0000</color>
+    <color name="selector_grey">#DDDDDD</color>
+
 </resources>

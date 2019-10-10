@@ -96,6 +96,8 @@ public class TextIndicatorView extends BaseCombinationView {
         layoutIndicator = (LinearLayout) findViewById(R.id.layout_indicator);
         txtIndicator = (TextView) findViewById(R.id.txt_indicator);
         imgIndicator = (ImageView) findViewById(R.id.img_indicator);
+        LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        addView(mView, llp);
     }
 
     @Override

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示" />
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <com.luffy.generalviewlib.combinationView.child.textIndicator.TextIndicatorView
+            android:id="@+id/textIndicatorView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:indicator_drawable_expand="@drawable/general_text_indicator_expand"
+            app:indicator_drawable_height="5dp"
+            app:indicator_drawable_marginLeft="5dp"
+            app:indicator_drawable_pack_up="@drawable/general_text_indicator_pack_up"
+            app:indicator_drawable_width="10dp"
+            app:indicator_layout_background_resource="@color/color_F6F6F6"
+            app:indicator_layout_gravity="right"
+            app:indicator_layout_marginBottom="5dp"
+            app:indicator_layout_marginTop="5dp"
+            app:indicator_layout_padding="5dp"
+            app:indicator_text_color="#FF5600"
+            app:indicator_text_expand="@string/txt_expand"
+            app:indicator_text_pack_up="@string/txt_pack_up"
+            app:indicator_text_size="14"
+            app:text_color="@color/colorPrimary"
+            app:text_layout_gravity="right"
+            app:text_lineSpacingExtra="5dp"
+            app:text_maxLines="2"
+            app:text_size="14"
+            tools:text_content="@string/app_name" />
+
+    </LinearLayout>
+
+</LinearLayout>

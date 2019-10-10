@@ -1,3 +1,7 @@
 <resources>
     <string name="base_next">下一步</string>
+
+    <!--文本指示器-->
+    <string name="txt_pack_up">收起</string>
+    <string name="txt_expand">展开</string>
 </resources>

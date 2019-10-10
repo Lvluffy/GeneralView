@@ -55,5 +55,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/y15" />
 
+    <!--文本指示器-->
+    <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
+        android:id="@+id/btn_text_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y15" />
+
 </LinearLayout>
 

@@ -13,6 +13,7 @@ import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
 import com.luffy.generalview.ui.playingIcon.PlayingIconActivity;
 import com.luffy.generalview.ui.ratingBar.GeneralRatingBarActivity;
 import com.luffy.generalview.ui.tag.GeneralTagActivity;
+import com.luffy.generalview.ui.textIndicator.TextIndicatorActivity;
 import com.luffy.generalview.ui.wheel.WheelViewActivity;
 import com.luffy.generalviewlib.combinationView.child.button.GeneralButton;
 import com.luffy.generalviewlib.combinationView.child.button.IGeneralButton;
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
     GeneralButton btnPlayingIcon;
     @BindView(R.id.btn_bottom_bar)
     GeneralButton btnBottomBar;
+    @BindView(R.id.btn_text_indicator)
+    GeneralButton btnTextIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +99,12 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
         btnBottomBar.setTextSize(14);
         btnBottomBar.setTextColor(R.color.base_btn_confirm_textcolor);
         btnBottomBar.setEnable(true);
+
+        btnTextIndicator.setLayoutHeight(DensityUtils.getInstance().dp2px(this, 45));
+        btnTextIndicator.setText("文本指示器");
+        btnTextIndicator.setTextSize(14);
+        btnTextIndicator.setTextColor(R.color.base_btn_confirm_textcolor);
+        btnTextIndicator.setEnable(true);
     }
 
     @OnClick({R.id.btn_wheelView,
@@ -104,7 +113,8 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
             R.id.btn_tag,
             R.id.btn_ratingBar,
             R.id.btn_playing_icon,
-            R.id.btn_bottom_bar
+            R.id.btn_bottom_bar,
+            R.id.btn_text_indicator
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -139,9 +149,13 @@ public class MainActivity extends AppCompatActivity implements IGeneralButton {
                 /*播放中控件*/
                 startActivity(new Intent(MainActivity.this, PlayingIconActivity.class));
                 break;
-            case R.id.btn_bottom_bar :
+            case R.id.btn_bottom_bar:
                 /*底部栏*/
                 startActivity(new Intent(MainActivity.this, BottomBarActivity.class));
+                break;
+            case R.id.btn_text_indicator:
+                /*文本指示器*/
+                startActivity(new Intent(MainActivity.this, TextIndicatorActivity.class));
                 break;
         }
     }

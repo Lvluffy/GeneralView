@@ -10,6 +10,7 @@ import android.text.Html;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -17,7 +18,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.luffy.generalviewlib.R;
-import com.luffy.generalviewlib.combinationView.base.BaseCombinationView;
 
 /**
  * Created by lvlufei on 2019/10/10
@@ -25,7 +25,7 @@ import com.luffy.generalviewlib.combinationView.base.BaseCombinationView;
  * @name 通用文本指示器（展开、收起）
  * @desc
  */
-public class TextIndicatorView extends BaseCombinationView {
+public class TextIndicatorView extends LinearLayout {
 
     /**
      * 组合控件
@@ -73,30 +73,54 @@ public class TextIndicatorView extends BaseCombinationView {
 
     public TextIndicatorView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        init(context, attrs);
     }
 
-    @Override
-    protected void init(AttributeSet attrs) {
-        super.init(attrs);
+    public TextIndicatorView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs);
+    }
+
+    /**
+     * 初始化
+     *
+     * @param context
+     * @param attrs
+     */
+    private void init(Context context, AttributeSet attrs) {
+        /*初始化组合控件*/
+        initWidget(context);
+        /*初始化属性*/
+        initAttrs(context, attrs);
+        /*初始化值*/
+        initValue();
+        /*处理业务*/
         handlerBusines();
     }
 
-    @Override
-    public int setLayoutView() {
-        return R.layout.general_text_indicator;
+    /**
+     * 初始化组合控件
+     *
+     * @param context
+     */
+    private void initWidget(Context context) {
+        View rootView = LayoutInflater.from(context).inflate(R.layout.general_text_indicator, null);
+        txtContent = rootView.findViewById(R.id.txt_content);
+        layoutIndicator = rootView.findViewById(R.id.layout_indicator);
+        txtIndicator = rootView.findViewById(R.id.txt_indicator);
+        imgIndicator = rootView.findViewById(R.id.img_indicator);
+        LayoutParams llp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        addView(rootView, llp);
     }
 
-    @Override
-    public void initView() {
-        txtContent = (TextView) findViewById(R.id.txt_content);
-        layoutIndicator = (LinearLayout) findViewById(R.id.layout_indicator);
-        txtIndicator = (TextView) findViewById(R.id.txt_indicator);
-        imgIndicator = (ImageView) findViewById(R.id.img_indicator);
-    }
-
-    @Override
-    public void initAttrs(AttributeSet attrs) {
-        TypedArray attributes = mContext.obtainStyledAttributes(attrs, R.styleable.TextIndicatorView);
+    /**
+     * 初始化属性
+     *
+     * @param context
+     * @param attrs
+     */
+    private void initAttrs(Context context, AttributeSet attrs) {
+        TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.TextIndicatorView);
         /**内容*/
         textLayoutGravity = attributes.getInt(R.styleable.TextIndicatorView_text_layout_gravity, Gravity.LEFT);
         /*最大行数*/
@@ -141,8 +165,10 @@ public class TextIndicatorView extends BaseCombinationView {
         attributes.recycle();
     }
 
-    @Override
-    public void bindAttrs() {
+    /**
+     * 初始化值
+     */
+    private void initValue() {
         /**内容*/
         /*位置*/
         switch (textLayoutGravity) {
@@ -279,5 +305,6 @@ public class TextIndicatorView extends BaseCombinationView {
         handlerBusines();
         invalidate();
     }
-
 }
+
+

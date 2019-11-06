@@ -76,6 +76,13 @@ public class GeneralEmpty extends BaseCombinationView {
         return this;
     }
 
+    public GeneralEmpty setEmptyImgMargin(int left, int top, int right, int bottom) {
+        emptyImg.setVisibility(VISIBLE);
+        LayoutParams mLayoutParams = (LayoutParams) emptyImg.getLayoutParams();
+        mLayoutParams.setMargins(left, top, right, bottom);
+        return this;
+    }
+
     public GeneralEmpty setEmptyTxt(int txtId) {
         emptyTxt.setVisibility(VISIBLE);
         emptyTxt.setText(txtId);
@@ -112,6 +119,13 @@ public class GeneralEmpty extends BaseCombinationView {
         return this;
     }
 
+    public GeneralEmpty setEmptyTxtMargin(int left, int top, int right, int bottom) {
+        emptyTxt.setVisibility(VISIBLE);
+        LayoutParams mLayoutParams = (LayoutParams) emptyTxt.getLayoutParams();
+        mLayoutParams.setMargins(left, top, right, bottom);
+        return this;
+    }
+
     public GeneralEmpty setEmptyBtnSize(float size) {
         emptyBtn.setVisibility(VISIBLE);
         emptyBtn.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
@@ -138,7 +152,30 @@ public class GeneralEmpty extends BaseCombinationView {
 
     public GeneralEmpty setEmptyBtnWidthHeight(int width, int height) {
         emptyBtn.setVisibility(VISIBLE);
-        emptyBtn.setLayoutParams(new LayoutParams(width, height));
+        if (width == 0 && height == 0) {
+            emptyBtn.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        } else {
+            emptyBtn.setLayoutParams(new LayoutParams(width, height));
+        }
+        return this;
+    }
+
+    public GeneralEmpty setEmptyBtnMargin(int left, int top, int right, int bottom) {
+        emptyBtn.setVisibility(VISIBLE);
+        LayoutParams mLayoutParams = (LayoutParams) emptyBtn.getLayoutParams();
+        mLayoutParams.setMargins(left, top, right, bottom);
+        return this;
+    }
+
+    public GeneralEmpty setEmptyBtnPadding(int left, int top, int right, int bottom) {
+        emptyBtn.setVisibility(VISIBLE);
+        emptyBtn.setPadding(left, top, right, bottom);
+        return this;
+    }
+
+    public GeneralEmpty setEmptyBtnPadding(int padding) {
+        emptyBtn.setVisibility(VISIBLE);
+        emptyBtn.setPadding(padding, padding, padding, padding);
         return this;
     }
 

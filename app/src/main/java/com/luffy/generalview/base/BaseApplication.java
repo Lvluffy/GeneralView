@@ -1,6 +1,6 @@
 package com.luffy.generalview.base;
 
-import com.luffy.uilib.android.application.BaseLayerApplication;
+import com.luffy.generalandroidlib.android.application.BaseLayerApplication;
 
 /**
  * Created by lvlufei on 2019/8/6

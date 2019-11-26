@@ -5,10 +5,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.luffy.generalandroidlib.android.list.adapter.BaseLayerAdapter;
 import com.luffy.generalview.R;
 import com.luffy.generalview.base.BaseViewHolder;
 import com.luffy.generalview.model.GeneralEmptyBean;
-import com.luffy.uilib.android.list.adapter.BaseLayerAdapter;
 
 import java.util.List;
 

@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.luffy.generalutilslib.utils.DensityUtils;
 import com.luffy.generalview.R;
 import com.luffy.generalview.ui.bottombar.BottomBarActivity;
 import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
@@ -17,7 +18,6 @@ import com.luffy.generalview.ui.textIndicator.TextIndicatorActivity;
 import com.luffy.generalview.ui.wheel.WheelViewActivity;
 import com.luffy.generalviewlib.combinationView.child.button.GeneralButton;
 import com.luffy.generalviewlib.combinationView.child.button.IGeneralButton;
-import com.luffy.utilslib.utils.DensityUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

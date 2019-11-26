@@ -48,8 +48,12 @@ dependencies {
     /**generalviewlib*/
     compile project(':generalviewlib')
     /**自己的库*/
-    /*UI*/
-    compile 'com.github.Lvluffy:ui:1.4.2'
-    /*网络框架*/
-    compile 'com.github.Lvluffy:network:1.0.2'
+    /*通用Android*/
+    compile 'com.github.Lvluffy:GeneralAndroid:1.0.2'
+    /*通用网络*/
+    compile 'com.github.Lvluffy:GeneralNetwork:1.0.1'
+    /*通用工具*/
+    compile 'com.github.Lvluffy:GeneralUtils:1.0.2'
+    /*通用弹框*/
+    compile 'com.github.Lvluffy:GeneralDialog:1.0.2'
 }

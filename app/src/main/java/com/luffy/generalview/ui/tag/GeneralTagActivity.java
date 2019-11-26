@@ -3,7 +3,7 @@ package com.luffy.generalview.ui.tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.luffy.dialoglib.toast.ToastBuilder;
+import com.luffy.generaldialoglib.toast.ToastBuilder;
 import com.luffy.generalview.R;
 import com.luffy.generalviewlib.customView.tag.TagView;
 

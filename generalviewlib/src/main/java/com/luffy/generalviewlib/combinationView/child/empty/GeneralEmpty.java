@@ -58,6 +58,12 @@ public class GeneralEmpty extends BaseCombinationView {
 
     }
 
+    public GeneralEmpty setEmptyLayoutBackground(int resId) {
+        emptyLayout.setVisibility(VISIBLE);
+        emptyLayout.setBackgroundResource(resId);
+        return this;
+    }
+
     public GeneralEmpty setEmptyLayoutGravity(int gravity) {
         emptyLayout.setVisibility(VISIBLE);
         emptyLayout.setGravity(gravity);

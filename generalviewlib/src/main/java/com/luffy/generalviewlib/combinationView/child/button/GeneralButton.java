@@ -1,6 +1,8 @@
 package com.luffy.generalviewlib.combinationView.child.button;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -21,12 +23,33 @@ import com.luffy.generalviewlib.combinationView.base.BaseCombinationView;
  * @desc 通用按钮
  */
 public class GeneralButton extends BaseCombinationView {
-    RelativeLayout layout;
-    TextView textView;
-    ImageView imageView;
+    /**
+     * 组合控件
+     */
+    private RelativeLayout layout;
+    private TextView textView;
+    private ImageView imageView;
 
-    int enableTrue = R.drawable.general_btn_normal_full_radius_stroke_false_primary_selector;
-    int enableFalse = R.drawable.general_btn_disable_full_radius_stroke_false_selector;
+    /**
+     * 默认值
+     */
+    private int enableTrue = R.drawable.general_btn_normal_full_radius_stroke_false_primary_selector;
+    private int enableFalse = R.drawable.general_btn_disable_full_radius_stroke_false_selector;
+    private int defaultTextColor = Color.parseColor("#ffffff");
+
+    /**
+     * 属性值
+     */
+    /*根布局*/
+    private int button_root_enable_true_background_resource;
+    private int button_root_enable_false_background_resource;
+    private int button_root_width;
+    private int button_root_height;
+    private boolean button_root_clickable;
+    /*文本*/
+    private int button_text_color;
+    private int button_text_size;
+    private String button_text_content;
 
     public GeneralButton(Context context) {
         super(context);
@@ -50,12 +73,52 @@ public class GeneralButton extends BaseCombinationView {
 
     @Override
     public void initAttrs(AttributeSet attrs) {
-
+        TypedArray attributes = mContext.obtainStyledAttributes(attrs, R.styleable.GeneralButton);
+        /**根布局*/
+        /*背景色*/
+        button_root_enable_true_background_resource = attributes.getResourceId(R.styleable.GeneralButton_button_root_enable_true_background_resource, enableTrue);
+        button_root_enable_false_background_resource = attributes.getResourceId(R.styleable.GeneralButton_button_root_enable_false_background_resource, enableFalse);
+        /*布局宽高*/
+        button_root_width = attributes.getDimensionPixelSize(R.styleable.GeneralButton_button_root_width, LayoutParams.MATCH_PARENT);
+        button_root_height = attributes.getDimensionPixelSize(R.styleable.GeneralButton_button_root_height, LayoutParams.WRAP_CONTENT);
+        /*是否可点击*/
+        button_root_clickable = attributes.getBoolean(R.styleable.GeneralButton_button_root_clickable, true);
+        /**文本*/
+        /*颜色*/
+        button_text_color = attributes.getColor(R.styleable.GeneralButton_button_text_color, defaultTextColor);
+        /*大小*/
+        button_text_size = attributes.getInteger(R.styleable.GeneralButton_button_text_size, 14);
+        /*内容*/
+        button_text_content = attributes.getString(R.styleable.GeneralButton_button_text_content);
+        /**回收*/
+        attributes.recycle();
     }
 
     @Override
     public void bindAttrs() {
-
+        /**根布局*/
+        /*宽高*/
+        LinearLayout.LayoutParams paramsButtonRoot = (LayoutParams) layout.getLayoutParams();
+        paramsButtonRoot.width = button_root_width;
+        paramsButtonRoot.height = button_root_height;
+        layout.setLayoutParams(paramsButtonRoot);
+        /*是否可点击+背景色*/
+        if (button_root_clickable) {
+            layout.setBackgroundResource(button_root_enable_true_background_resource);
+            //没有禁用可以点击
+            layout.setClickable(false);
+        } else {
+            layout.setBackgroundResource(button_root_enable_false_background_resource);
+            //禁用时候不能点击
+            layout.setClickable(true);
+        }
+        /**文本*/
+        /*颜色*/
+        textView.setTextColor(button_text_color);
+        /*大小*/
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, button_text_size);
+        /*内容*/
+        textView.setText(button_text_content);
     }
 
     /**
@@ -92,7 +155,6 @@ public class GeneralButton extends BaseCombinationView {
     public void setTextColor(int color) {
         textView.setTextColor(ContextCompat.getColor(mContext, color));
     }
-
 
     /**
      * 设置文字的大小
@@ -147,7 +209,6 @@ public class GeneralButton extends BaseCombinationView {
      * @param enable
      */
     public void setEnable(boolean enable) {
-        textView.setEnabled(enable);
         if (enable) {
             layout.setBackgroundResource(getEnableTrue());
             //没有禁用可以点击

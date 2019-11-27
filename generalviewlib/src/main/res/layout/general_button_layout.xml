@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/base_btn_layout"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/y44"
+    android:layout_height="@dimen/y45"
     android:background="@drawable/general_btn_normal_radius_false_stroke_false_primary_selector"
     android:clickable="true">
 

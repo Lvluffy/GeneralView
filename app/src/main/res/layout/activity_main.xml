@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!--设置-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,56 +12,112 @@
         android:id="@+id/btn_wheelView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="转动控件"
+        app:button_text_size="14" />
 
     <!--消息轮动-->
     <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_flipper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="消息轮动"
+        app:button_text_size="14" />
 
     <!--空布局-->
     <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="空布局"
+        app:button_text_size="14" />
 
     <!--标签-->
     <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_tag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="标签"
+        app:button_text_size="14" />
 
     <!--星级评分-->
     <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_ratingBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="星级评分"
+        app:button_text_size="14" />
 
     <!--播放中控件-->
     <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_playing_icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="播放中控件"
+        app:button_text_size="14" />
 
     <!--底部栏-->
     <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="底部栏"
+        app:button_text_size="14" />
 
     <!--文本指示器-->
     <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
         android:id="@+id/btn_text_indicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15" />
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="文本指示器"
+        app:button_text_size="14" />
 
 </LinearLayout>
 

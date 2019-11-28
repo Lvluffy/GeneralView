@@ -3,6 +3,7 @@ package com.luffy.generalviewlib.combinationView.child.button;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -50,6 +51,7 @@ public class GeneralButton extends BaseCombinationView {
     private int button_text_color;
     private int button_text_size;
     private String button_text_content;
+    private int button_text_style;
 
     public GeneralButton(Context context) {
         super(context);
@@ -90,6 +92,8 @@ public class GeneralButton extends BaseCombinationView {
         button_text_size = attributes.getInteger(R.styleable.GeneralButton_button_text_size, 14);
         /*内容*/
         button_text_content = attributes.getString(R.styleable.GeneralButton_button_text_content);
+        /*样式*/
+        button_text_style = attributes.getInt(R.styleable.GeneralButton_button_text_style, 1);
         /**回收*/
         attributes.recycle();
     }
@@ -119,6 +123,18 @@ public class GeneralButton extends BaseCombinationView {
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, button_text_size);
         /*内容*/
         textView.setText(button_text_content);
+        /*样式*/
+        switch (button_text_style) {
+            case 1:
+                textView.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+                break;
+            case 2:
+                textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+                break;
+            case 3:
+                textView.setTypeface(Typeface.defaultFromStyle(Typeface.ITALIC));
+                break;
+        }
     }
 
     /**

@@ -58,5 +58,7 @@ dependencies {
 
 1-3-4，转动控件
 
+1-3-5，Spinner
+
 ## 录屏
 ![3ygy7-6l9oj](https://user-images.githubusercontent.com/34730376/56339719-f061fc00-61e1-11e9-82f2-b82a808a7960.gif)

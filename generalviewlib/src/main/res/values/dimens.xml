@@ -51,4 +51,9 @@
     <dimen name="text_size_48">48.0sp</dimen>
     <dimen name="text_size_49">49.0sp</dimen>
     <dimen name="text_size_50">50.0sp</dimen>
+
+    <!--spinner-->
+    <dimen name="spinner_padding_left">10dp</dimen>
+    <dimen name="spinner_padding_right">5dp</dimen>
+    <dimen name="spinner_item_height">40dp</dimen>
 </resources>

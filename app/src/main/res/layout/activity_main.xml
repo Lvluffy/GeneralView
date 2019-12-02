@@ -119,5 +119,19 @@
         app:button_text_content="文本指示器"
         app:button_text_size="14" />
 
+    <!--spinner-->
+    <com.luffy.generalviewlib.combinationView.child.button.GeneralButton
+        android:id="@+id/btn_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y15"
+        app:button_root_clickable="true"
+        app:button_root_enable_false_background_resource="@drawable/general_btn_disable_full_radius_stroke_false_selector"
+        app:button_root_enable_true_background_resource="@drawable/general_btn_normal_full_radius_stroke_false_primary_selector"
+        app:button_root_height="@dimen/y40"
+        app:button_text_color="@color/white"
+        app:button_text_content="spinner"
+        app:button_text_size="14" />
+
 </LinearLayout>
 

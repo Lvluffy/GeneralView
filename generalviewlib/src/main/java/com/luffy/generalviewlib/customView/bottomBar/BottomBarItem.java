@@ -176,7 +176,7 @@ public class BottomBarItem extends LinearLayout {
 
     @NonNull
     private View initView() {
-        View view = View.inflate(context, R.layout.bottom_bar_item, null);
+        View view = View.inflate(context, R.layout.item_bottom_bar, null);
         if (itemPadding != 0) {
             //如果有设置item的padding
             view.setPadding(itemPadding, itemPadding, itemPadding, itemPadding);

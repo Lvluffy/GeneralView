@@ -64,7 +64,7 @@ public class TagView extends ViewGroup {
     private static final int DEFAULT_TEXT_BORDER_HORIZONTAL = 8;
     private static final int DEFAULT_TEXT_BORDER_VERTICAL = 5;
 
-    private static final int DEFAULT_TAG_RESID = R.layout.general_item_tag;
+    private static final int DEFAULT_TAG_RESID = R.layout.item_general_tag;
     private static final int DEFAULT_RIGHT_IMAGE = R.drawable.general_right_more;
     private static final boolean DEFAULT_SINGLE_LINE = false;
     private static final boolean DEFAULT_SHOW_RIGHT_IMAGE = true;

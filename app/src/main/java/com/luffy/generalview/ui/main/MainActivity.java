@@ -12,6 +12,7 @@ import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
 import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
 import com.luffy.generalview.ui.playingIcon.PlayingIconActivity;
 import com.luffy.generalview.ui.ratingBar.GeneralRatingBarActivity;
+import com.luffy.generalview.ui.spinner.SpinnerActivity;
 import com.luffy.generalview.ui.tag.GeneralTagActivity;
 import com.luffy.generalview.ui.textIndicator.TextIndicatorActivity;
 import com.luffy.generalview.ui.wheel.WheelViewActivity;
@@ -31,20 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_wheelView)
     GeneralButton btnConfirm;
-    @BindView(R.id.btn_flipper)
-    GeneralButton btnFlipper;
-    @BindView(R.id.btn_empty)
-    GeneralButton btnEmpty;
-    @BindView(R.id.btn_tag)
-    GeneralButton btnTag;
-    @BindView(R.id.btn_ratingBar)
-    GeneralButton btnRatingBar;
-    @BindView(R.id.btn_playing_icon)
-    GeneralButton btnPlayingIcon;
-    @BindView(R.id.btn_bottom_bar)
-    GeneralButton btnBottomBar;
-    @BindView(R.id.btn_text_indicator)
-    GeneralButton btnTextIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn_ratingBar,
             R.id.btn_playing_icon,
             R.id.btn_bottom_bar,
-            R.id.btn_text_indicator
+            R.id.btn_text_indicator,
+            R.id.btn_spinner
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -102,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_text_indicator:
                 /*文本指示器*/
                 startActivity(new Intent(MainActivity.this, TextIndicatorActivity.class));
+                break;
+            case R.id.btn_spinner:
+                /*spinner*/
+                startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
                 break;
         }
     }

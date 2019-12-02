@@ -36,6 +36,8 @@
         <activity android:name=".ui.bottombar.WithoutViewPagerActivity" />
         <!-- 文本编辑器 -->
         <activity android:name=".ui.textIndicator.TextIndicatorActivity" />
+        <!-- spinner -->
+        <activity android:name=".ui.spinner.SpinnerActivity"/>
     </application>
 
 </manifest>

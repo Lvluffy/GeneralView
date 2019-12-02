@@ -146,7 +146,7 @@ public class GeneralSpinner extends AppCompatTextView {
          *
          */
         if (!hideArrow) {
-            arrowDrawable = ContextCompat.getDrawable(context, R.drawable.ms_arrow).mutate();
+            arrowDrawable = ContextCompat.getDrawable(context, R.drawable.general_spinner_arrow).mutate();
             arrowDrawable.setColorFilter(arrowColor, PorterDuff.Mode.SRC_IN);
             if (rtl) {
                 setCompoundDrawablesWithIntrinsicBounds(arrowDrawable, null, null, null);
@@ -183,9 +183,9 @@ public class GeneralSpinner extends AppCompatTextView {
         //设置背景色、阴影
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             popupWindow.setElevation(16);
-            popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.ms_popwindow_bg));// R.drawable.ms__drawable
+            popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.general_spinner_popwindow_bg));
         } else {
-            popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.ms_popwindow_bg));
+            popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.general_spinner_popwindow_bg));
         }
 
         //设置背景，默认是白色

@@ -52,7 +52,7 @@ public class PlayingIcon extends View {
     private boolean isPlaying = false;
 
     //子线程
-    private Thread myThread;
+    private MyThread myThread;
 
     //指针波动速率
     private int pointerSpeed;
@@ -146,7 +146,26 @@ public class PlayingIcon extends View {
     public void start() {
         if (!isPlaying) {
             if (myThread == null) {//开启子线程
-                myThread = new Thread(new MyRunnable());
+                myThread = new MyThread() {
+                    @Override
+                    public void run() {
+                        for (float i = 0; i < Integer.MAX_VALUE; ) {//创建一个死循环，每循环一次i+0.1
+                            try {
+                                for (int j = 0; j < pointers.size(); j++) { //循环改变每个指针高度
+                                    float rate = (float) Math.abs(Math.sin(i + j));//利用正弦有规律的获取0~1的数。
+                                    pointers.get(j).setHeight((basePointY - getPaddingTop()) * rate); //rate 乘以 可绘制高度，来改变每个指针的高度
+                                }
+                                Thread.sleep(pointerSpeed);//休眠一下下，可自行调节
+                                if (isPlaying) { //控制开始/暂停
+                                    myHandler.sendEmptyMessage(0);
+                                    i += 0.1;
+                                }
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                };
                 myThread.start();
             }
             isPlaying = true;//控制子线程中的循环
@@ -164,7 +183,7 @@ public class PlayingIcon extends View {
     /**
      * 处理子线程发出来的指令，然后刷新布局
      */
-    private Handler myHandler = new Handler() {
+    private MyHandler myHandler = new MyHandler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -172,36 +191,17 @@ public class PlayingIcon extends View {
         }
     };
 
-    /**
-     * 子线程，循环改变每个指针的高度
-     */
-    public class MyRunnable implements Runnable {
+    public static class MyHandler extends Handler {
+    }
 
-        @Override
-        public void run() {
+    public static class MyThread extends Thread {
 
-            for (float i = 0; i < Integer.MAX_VALUE; ) {//创建一个死循环，每循环一次i+0.1
-                try {
-                    for (int j = 0; j < pointers.size(); j++) { //循环改变每个指针高度
-                        float rate = (float) Math.abs(Math.sin(i + j));//利用正弦有规律的获取0~1的数。
-                        pointers.get(j).setHeight((basePointY - getPaddingTop()) * rate); //rate 乘以 可绘制高度，来改变每个指针的高度
-                    }
-                    Thread.sleep(pointerSpeed);//休眠一下下，可自行调节
-                    if (isPlaying) { //控制开始/暂停
-                        myHandler.sendEmptyMessage(0);
-                        i += 0.1;
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
     /**
      * 指针类
      */
-    public class Pointer {
+    public static class Pointer {
         private float height;
 
         public Pointer(float height) {

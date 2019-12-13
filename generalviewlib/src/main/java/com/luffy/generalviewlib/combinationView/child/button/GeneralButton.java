@@ -36,7 +36,6 @@ public class GeneralButton extends BaseCombinationView {
      */
     private int enableTrue = R.drawable.general_btn_normal_full_radius_stroke_false_primary_selector;
     private int enableFalse = R.drawable.general_btn_disable_full_radius_stroke_false_selector;
-    private int defaultTextColor = Color.parseColor("#ffffff");
 
     /**
      * 属性值
@@ -68,45 +67,45 @@ public class GeneralButton extends BaseCombinationView {
 
     @Override
     public void initView() {
-        layout = (RelativeLayout) findViewById(R.id.base_btn_layout);
-        textView = (TextView) findViewById(R.id.base_btn_txt);
-        imageView = (ImageView) findViewById(R.id.base_btn_icon);
+        layout = findViewById(R.id.base_btn_layout);
+        textView = findViewById(R.id.base_btn_txt);
+        imageView = findViewById(R.id.base_btn_icon);
     }
 
     @Override
     public void initAttrs(AttributeSet attrs) {
         TypedArray attributes = mContext.obtainStyledAttributes(attrs, R.styleable.GeneralButton);
-        /**根布局*/
-        /*背景色*/
+        /*根布局*/
+        //背景色
         button_root_enable_true_background_resource = attributes.getResourceId(R.styleable.GeneralButton_button_root_enable_true_background_resource, enableTrue);
         button_root_enable_false_background_resource = attributes.getResourceId(R.styleable.GeneralButton_button_root_enable_false_background_resource, enableFalse);
-        /*布局宽高*/
+        //布局宽高
         button_root_width = attributes.getDimensionPixelSize(R.styleable.GeneralButton_button_root_width, LayoutParams.MATCH_PARENT);
         button_root_height = attributes.getDimensionPixelSize(R.styleable.GeneralButton_button_root_height, LayoutParams.WRAP_CONTENT);
-        /*是否可点击*/
+        //是否可点击
         button_root_clickable = attributes.getBoolean(R.styleable.GeneralButton_button_root_clickable, true);
-        /**文本*/
-        /*颜色*/
-        button_text_color = attributes.getColor(R.styleable.GeneralButton_button_text_color, defaultTextColor);
-        /*大小*/
+        /*文本*/
+        //颜色
+        button_text_color = attributes.getColor(R.styleable.GeneralButton_button_text_color, Color.parseColor("#ffffff"));
+        //大小
         button_text_size = attributes.getInteger(R.styleable.GeneralButton_button_text_size, 14);
-        /*内容*/
+        //内容
         button_text_content = attributes.getString(R.styleable.GeneralButton_button_text_content);
-        /*样式*/
+        //样式
         button_text_style = attributes.getInt(R.styleable.GeneralButton_button_text_style, 1);
-        /**回收*/
+        /*回收*/
         attributes.recycle();
     }
 
     @Override
     public void bindAttrs() {
-        /**根布局*/
-        /*宽高*/
+        /*根布局*/
+        //宽高
         LinearLayout.LayoutParams paramsButtonRoot = (LayoutParams) layout.getLayoutParams();
         paramsButtonRoot.width = button_root_width;
         paramsButtonRoot.height = button_root_height;
         layout.setLayoutParams(paramsButtonRoot);
-        /*是否可点击+背景色*/
+        //是否可点击+背景色
         if (button_root_clickable) {
             layout.setBackgroundResource(button_root_enable_true_background_resource);
             //没有禁用可以点击
@@ -116,14 +115,14 @@ public class GeneralButton extends BaseCombinationView {
             //禁用时候不能点击
             layout.setClickable(true);
         }
-        /**文本*/
-        /*颜色*/
+        /*文本*/
+        //颜色
         textView.setTextColor(button_text_color);
-        /*大小*/
+        //大小
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, button_text_size);
-        /*内容*/
+        //内容
         textView.setText(button_text_content);
-        /*样式*/
+        //样式
         switch (button_text_style) {
             case 1:
                 textView.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
@@ -140,7 +139,7 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置文字内容
      *
-     * @param content
+     * @param content 内容
      */
     public void setText(String content) {
         textView.setText(content);
@@ -149,7 +148,7 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置文字内容
      *
-     * @param content
+     * @param content 内容
      */
     public void setText(int content) {
         textView.setText(getResources().getString(content));
@@ -166,7 +165,7 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置文字的颜色
      *
-     * @param color
+     * @param color 颜色
      */
     public void setTextColor(int color) {
         textView.setTextColor(ContextCompat.getColor(mContext, color));
@@ -175,7 +174,7 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置文字的大小
      *
-     * @param textSize
+     * @param textSize 文字大小
      */
     public void setTextSize(int textSize) {
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
@@ -184,7 +183,7 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置加载动画
      *
-     * @param loadable
+     * @param loadable 是否加载动画
      */
     public void setLoading(boolean loadable) {
         if (loadable) {
@@ -203,7 +202,7 @@ public class GeneralButton extends BaseCombinationView {
         }
     }
 
-    public int getEnableTrue() {
+    private int getEnableTrue() {
         return enableTrue;
     }
 
@@ -211,7 +210,7 @@ public class GeneralButton extends BaseCombinationView {
         this.enableTrue = enableTrue;
     }
 
-    public int getEnableFalse() {
+    private int getEnableFalse() {
         return enableFalse;
     }
 
@@ -222,7 +221,7 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置
      *
-     * @param enable
+     * @param enable 是否可点击
      */
     public void setEnable(boolean enable) {
         if (enable) {
@@ -239,7 +238,7 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置布局高度
      *
-     * @param height
+     * @param height 高度
      */
     public void setLayoutHeight(int height) {
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) layout.getLayoutParams();
@@ -250,7 +249,7 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置布局宽度
      *
-     * @param width
+     * @param width 宽度
      */
     public void setLayoutWidth(int width) {
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) layout.getLayoutParams();
@@ -261,8 +260,8 @@ public class GeneralButton extends BaseCombinationView {
     /**
      * 设置布局高度、宽度
      *
-     * @param height
-     * @param width
+     * @param height 高度
+     * @param width  宽度
      */
     public void setLayoutHeightWidth(int height, int width) {
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) layout.getLayoutParams();

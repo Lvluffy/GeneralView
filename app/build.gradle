@@ -49,11 +49,11 @@ dependencies {
     compile project(':generalviewlib')
     /**自己的库*/
     /*通用Android*/
-    compile 'com.github.Lvluffy:GeneralAndroid:1.0.2'
+    compile 'com.github.Lvluffy:GeneralAndroid:1.0.4'
     /*通用网络*/
-    compile 'com.github.Lvluffy:GeneralNetwork:1.0.1'
+    compile 'com.github.Lvluffy:GeneralNetwork:1.0.2'
     /*通用工具*/
-    compile 'com.github.Lvluffy:GeneralUtils:1.0.2'
+    compile 'com.github.Lvluffy:GeneralUtils:1.0.9'
     /*通用弹框*/
-    compile 'com.github.Lvluffy:GeneralDialog:1.0.2'
+    compile 'com.github.Lvluffy:GeneralDialog:1.0.6'
 }

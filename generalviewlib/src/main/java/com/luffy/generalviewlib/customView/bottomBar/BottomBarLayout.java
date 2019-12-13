@@ -25,7 +25,6 @@ public class BottomBarLayout extends LinearLayout implements ViewPager.OnPageCha
     private static final String STATE_ITEM = "state_item";
 
     private ViewPager mViewPager;
-    private int mChildCount;//子条目个数
     private List<BottomBarItem> mItemViews = new ArrayList<>();
     private int mCurrentItem;//当前条目的索引
     private boolean mSmoothScroll;
@@ -63,13 +62,13 @@ public class BottomBarLayout extends LinearLayout implements ViewPager.OnPageCha
 
     private void init() {
         mItemViews.clear();
-        mChildCount = getChildCount();
+        int mChildCount = getChildCount();
         if (mChildCount == 0) {
             return;
         }
 
         if (mViewPager != null) {
-            if (mViewPager.getAdapter().getCount() != mChildCount) {
+            if (mChildCount != mViewPager.getAdapter().getCount()) {
                 throw new IllegalArgumentException("LinearLayout的子View数量必须和ViewPager条目数量一致");
             }
         }

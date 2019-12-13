@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/y45"
     android:background="@drawable/general_btn_normal_radius_false_stroke_false_primary_selector"
-    android:clickable="true">
+    android:clickable="true"
+    android:focusable="true">
 
     <TextView
         android:id="@+id/base_btn_txt"
@@ -22,11 +23,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/x10"
         android:layout_marginRight="@dimen/x10"
         android:layout_toLeftOf="@+id/base_btn_txt"
+        android:layout_toStartOf="@+id/base_btn_txt"
         android:scaleType="fitXY"
         android:src="@drawable/general_button_loading"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:ignore="ContentDescription" />
 
 </RelativeLayout>
 

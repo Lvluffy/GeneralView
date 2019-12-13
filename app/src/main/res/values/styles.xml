@@ -1,7 +1,7 @@
 <resources>
 
     <!--应用主题-->
-    <style name="AppTheme" parent="@style/BaseLayerTheme"></style>
+    <style name="AppTheme" parent="@style/BaseLayerTheme" />
 
     <!--子项样式(父)-->
     <style name="base_item_style_base">

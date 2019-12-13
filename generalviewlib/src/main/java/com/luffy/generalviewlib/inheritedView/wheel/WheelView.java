@@ -28,10 +28,6 @@ import java.util.List;
  */
 public class WheelView extends ScrollView {
 
-    /*常量*/
-    private static final int SCROLL_DIRECTION_UP = 0;
-    private static final int SCROLL_DIRECTION_DOWN = 1;
-
     private Context context;
     private LinearLayout viewRoot;
 
@@ -50,9 +46,6 @@ public class WheelView extends ScrollView {
      * 获取选中区域的边界
      */
     int[] selectedAreaBorder;
-
-    private int scrollDirection = -1;
-
 
     Paint paint;
     int viewWidth;
@@ -201,11 +194,6 @@ public class WheelView extends ScrollView {
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
         refreshItemView(t);
-        if (t > oldt) {
-            scrollDirection = SCROLL_DIRECTION_DOWN;
-        } else {
-            scrollDirection = SCROLL_DIRECTION_UP;
-        }
     }
 
     private void refreshItemView(int y) {
@@ -258,8 +246,8 @@ public class WheelView extends ScrollView {
         background = new Drawable() {
             @Override
             public void draw(Canvas canvas) {
-                canvas.drawLine(viewWidth * 1 / 6, obtainSelectedAreaBorder()[0], viewWidth * 5 / 6, obtainSelectedAreaBorder()[0], paint);
-                canvas.drawLine(viewWidth * 1 / 6, obtainSelectedAreaBorder()[1], viewWidth * 5 / 6, obtainSelectedAreaBorder()[1], paint);
+                canvas.drawLine(viewWidth / 6, obtainSelectedAreaBorder()[0], viewWidth * 5 / 6, obtainSelectedAreaBorder()[0], paint);
+                canvas.drawLine(viewWidth / 6, obtainSelectedAreaBorder()[1], viewWidth * 5 / 6, obtainSelectedAreaBorder()[1], paint);
             }
 
             @Override
@@ -293,6 +281,7 @@ public class WheelView extends ScrollView {
         super.fling(velocityY / 3);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_UP) {

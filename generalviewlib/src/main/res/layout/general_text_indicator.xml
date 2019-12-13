@@ -33,7 +33,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            tools:src="@drawable/general_text_indicator_expand" />
+            tools:src="@drawable/general_text_indicator_expand"
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 

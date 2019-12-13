@@ -274,7 +274,6 @@ public class GeneralFlipper extends BaseCombinationView {
             this.setVisibility(GONE);
             viewFlipper.removeAllViews();
             viewFlipper.stopFlipping();
-            return;
         } else {
             this.setVisibility(VISIBLE);
             viewFlipper.removeAllViews();

@@ -17,12 +17,11 @@ import android.widget.TextView;
 public class TabFragment extends Fragment {
 
     public static final String CONTENT = "content";
-    private TextView mTextView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle bundle) {
-        mTextView = new TextView(getActivity());
+        TextView mTextView = new TextView(getActivity());
         mTextView.setGravity(Gravity.CENTER);
         String content = getArguments().getString(CONTENT);
         mTextView.setText(content);

@@ -64,10 +64,7 @@ public abstract class BaseTextWatcher implements TextWatcher {
         }
         Pattern pattern = Pattern.compile(setRegex());
         Matcher matcher = pattern.matcher(charSequence);
-        if (matcher.matches()) {
-            return true;
-        }
-        return false;
+        return matcher.matches();
     }
 
     /**

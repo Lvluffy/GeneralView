@@ -15,7 +15,8 @@
         android:layout_marginBottom="30dp"
         android:scaleType="fitXY"
         android:visibility="gone"
-        tools:src="@drawable/general_empty" />
+        tools:src="@drawable/general_empty"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/empty_txt"

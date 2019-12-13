@@ -34,7 +34,7 @@ public class WithoutViewPagerActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mBottomBarLayout = (BottomBarLayout) findViewById(R.id.bbl);
+        mBottomBarLayout = findViewById(R.id.bbl);
     }
 
     private void initData() {

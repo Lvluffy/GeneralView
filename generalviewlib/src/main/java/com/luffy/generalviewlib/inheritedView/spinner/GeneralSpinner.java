@@ -18,6 +18,7 @@
 package com.luffy.generalviewlib.inheritedView.spinner;
 
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -244,6 +245,7 @@ public class GeneralSpinner extends AppCompatTextView {
      * @param event
      * @return
      */
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(@NonNull MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_UP) {
@@ -269,7 +271,7 @@ public class GeneralSpinner extends AppCompatTextView {
         Drawable background = getBackground();
         if (background instanceof StateListDrawable) {
             try {
-                Method getStateDrawable = StateListDrawable.class.getDeclaredMethod("getStateDrawable", int.class);
+                @SuppressLint("PrivateApi") Method getStateDrawable = StateListDrawable.class.getDeclaredMethod("getStateDrawable", int.class);
                 if (!getStateDrawable.isAccessible())
                     getStateDrawable.setAccessible(true);
                 int[] colors = {Utils.darker(color, 0.85f), color};
@@ -322,7 +324,8 @@ public class GeneralSpinner extends AppCompatTextView {
      * @param items
      * @param <T>
      */
-    public <T> void setItems(@NonNull T... items) {
+    @SafeVarargs
+    public final <T> void setItems(@NonNull T... items) {
         setItems(Arrays.asList(items));
     }
 
@@ -339,7 +342,7 @@ public class GeneralSpinner extends AppCompatTextView {
      * @param <T>
      * @return
      */
-    public <T> List<T> getItems() {
+    public <T> List getItems() {
         if (adapter == null) {
             return null;
         }

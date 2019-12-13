@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/x5"
+            android:layout_marginStart="@dimen/x5"
             android:background="@drawable/bg_normal_full_radius_stroke_true_white_selector"
             android:ellipsize="end"
             android:gravity="center"
@@ -59,7 +60,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="@dimen/y10"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <!--点赞-->
         <LinearLayout

@@ -4,7 +4,10 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 
 /**
- * Created by willy on 2017/5/10.
+ * Created by lvlufei on 2019/12/13
+ *
+ * @name
+ * @desc
  */
 interface IBaseRatingBar {
 

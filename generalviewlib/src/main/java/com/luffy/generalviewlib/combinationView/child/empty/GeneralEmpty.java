@@ -42,10 +42,10 @@ public class GeneralEmpty extends BaseCombinationView {
 
     @Override
     public void initView() {
-        emptyLayout = (LinearLayout) findViewById(R.id.empty_layout);
-        emptyImg = (ImageView) findViewById(R.id.empty_img);
-        emptyTxt = (TextView) findViewById(R.id.empty_txt);
-        emptyBtn = (TextView) findViewById(R.id.empty_btn);
+        emptyLayout = findViewById(R.id.empty_layout);
+        emptyImg = findViewById(R.id.empty_img);
+        emptyTxt = findViewById(R.id.empty_txt);
+        emptyBtn = findViewById(R.id.empty_btn);
     }
 
     @Override

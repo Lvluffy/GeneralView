@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.luffy.generalviewlib.R;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -54,8 +55,14 @@ public class PlayingIcon extends View {
     //子线程
     private MyThread myThread;
 
+    //处理子线程发出来的指令，然后刷新布局
+    private MyHandler myHandler = new MyHandler(PlayingIcon.this);
+
     //指针波动速率
     private int pointerSpeed;
+
+    //随机数
+    private Random random = new Random();
 
     public PlayingIcon(Context context) {
         super(context);
@@ -65,22 +72,25 @@ public class PlayingIcon extends View {
     public PlayingIcon(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         //取出自定义属性
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PlayingIcon);
-        pointerColor = ta.getColor(R.styleable.PlayingIcon_pointer_color, Color.RED);
-        pointerNum = ta.getInt(R.styleable.PlayingIcon_pointer_num, 4);//指针的数量，默认为4
-        pointerWidth = dp2px(getContext(), ta.getFloat(R.styleable.PlayingIcon_pointer_width, 5f));//指针的宽度，默认5dp
-        pointerSpeed = ta.getInt(R.styleable.PlayingIcon_pointer_speed, 40);
+        initAttrs(context, attrs);
         init();
     }
 
     public PlayingIcon(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PlayingIcon);
-        pointerColor = ta.getColor(R.styleable.PlayingIcon_pointer_color, Color.RED);
-        pointerNum = ta.getInt(R.styleable.PlayingIcon_pointer_num, 4);
-        pointerWidth = dp2px(getContext(), ta.getFloat(R.styleable.PlayingIcon_pointer_width, 5f));
-        pointerSpeed = ta.getInt(R.styleable.PlayingIcon_pointer_speed, 40);
+        initAttrs(context, attrs);
         init();
+    }
+
+    private void initAttrs(Context context, AttributeSet attrs) {
+        TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.PlayingIcon);
+        // 属性
+        pointerColor = attributes.getColor(R.styleable.PlayingIcon_pointer_color, Color.RED);
+        pointerNum = attributes.getInt(R.styleable.PlayingIcon_pointer_num, 4);//指针的数量，默认为4
+        pointerWidth = dp2px(getContext(), attributes.getFloat(R.styleable.PlayingIcon_pointer_width, 5f));//指针的宽度，默认5dp
+        pointerSpeed = attributes.getInt(R.styleable.PlayingIcon_pointer_speed, 40);
+        // 回收
+        attributes.recycle();
     }
 
     /**
@@ -107,7 +117,6 @@ public class PlayingIcon extends View {
         super.onLayout(changed, left, top, right, bottom);
         //获取逻辑原点的，也就是画布左下角的坐标。这里减去了paddingBottom的距离
         basePointY = getHeight() - getPaddingBottom();
-        Random random = new Random();
         if (pointers != null)
             pointers.clear();
         for (int i = 0; i < pointerNum; i++) {
@@ -146,26 +155,7 @@ public class PlayingIcon extends View {
     public void start() {
         if (!isPlaying) {
             if (myThread == null) {//开启子线程
-                myThread = new MyThread() {
-                    @Override
-                    public void run() {
-                        for (float i = 0; i < Integer.MAX_VALUE; ) {//创建一个死循环，每循环一次i+0.1
-                            try {
-                                for (int j = 0; j < pointers.size(); j++) { //循环改变每个指针高度
-                                    float rate = (float) Math.abs(Math.sin(i + j));//利用正弦有规律的获取0~1的数。
-                                    pointers.get(j).setHeight((basePointY - getPaddingTop()) * rate); //rate 乘以 可绘制高度，来改变每个指针的高度
-                                }
-                                Thread.sleep(pointerSpeed);//休眠一下下，可自行调节
-                                if (isPlaying) { //控制开始/暂停
-                                    myHandler.sendEmptyMessage(0);
-                                    i += 0.1;
-                                }
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                };
+                myThread = new MyThread(PlayingIcon.this);
                 myThread.start();
             }
             isPlaying = true;//控制子线程中的循环
@@ -180,22 +170,51 @@ public class PlayingIcon extends View {
         invalidate();
     }
 
-    /**
-     * 处理子线程发出来的指令，然后刷新布局
-     */
-    private MyHandler myHandler = new MyHandler() {
+    public static class MyHandler extends Handler {
+        private WeakReference<PlayingIcon> weakReference;
+
+        public MyHandler(PlayingIcon playingIcon) {
+            weakReference = new WeakReference<>(playingIcon);
+        }
+
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            invalidate();
+            PlayingIcon playingIcon = weakReference.get();
+            if (playingIcon != null)
+                playingIcon.invalidate();
         }
-    };
-
-    public static class MyHandler extends Handler {
     }
 
     public static class MyThread extends Thread {
+        private WeakReference<PlayingIcon> weakReference;
 
+        public MyThread(PlayingIcon playingIcon) {
+            weakReference = new WeakReference<>(playingIcon);
+        }
+
+        @Override
+        public void run() {
+            super.run();
+            PlayingIcon playingIcon = weakReference.get();
+            if (playingIcon != null) {
+                for (float i = 0; i < Integer.MAX_VALUE; ) {//创建一个死循环，每循环一次i+0.1
+                    try {
+                        for (int j = 0; j < playingIcon.pointers.size(); j++) { //循环改变每个指针高度
+                            float rate = (float) Math.abs(Math.sin(i + j));//利用正弦有规律的获取0~1的数。
+                            playingIcon.pointers.get(j).setHeight((playingIcon.basePointY - playingIcon.getPaddingTop()) * rate); //rate 乘以 可绘制高度，来改变每个指针的高度
+                        }
+                        Thread.sleep(playingIcon.pointerSpeed);//休眠一下下，可自行调节
+                        if (playingIcon.isPlaying) { //控制开始/暂停
+                            playingIcon.myHandler.sendEmptyMessage(0);
+                            i += 0.1;
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
     }
 
     /**

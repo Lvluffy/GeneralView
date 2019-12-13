@@ -181,11 +181,11 @@ public class BottomBarItem extends LinearLayout {
             //如果有设置item的padding
             view.setPadding(itemPadding, itemPadding, itemPadding, itemPadding);
         }
-        mImageView = (ImageView) view.findViewById(R.id.iv_icon);
-        mTvUnread = (TextView) view.findViewById(R.id.tv_unred_num);
-        mTvMsg = (TextView) view.findViewById(R.id.tv_msg);
-        mTvNotify = (TextView) view.findViewById(R.id.tv_point);
-        mTextView = (TextView) view.findViewById(R.id.tv_text);
+        mImageView = view.findViewById(R.id.iv_icon);
+        mTvUnread = view.findViewById(R.id.tv_unred_num);
+        mTvMsg = view.findViewById(R.id.tv_msg);
+        mTvNotify = view.findViewById(R.id.tv_point);
+        mTextView = view.findViewById(R.id.tv_text);
         return view;
     }
 

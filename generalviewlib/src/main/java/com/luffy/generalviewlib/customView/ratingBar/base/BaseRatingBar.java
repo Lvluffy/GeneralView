@@ -1,5 +1,6 @@
 package com.luffy.generalviewlib.customView.ratingBar.base;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -268,6 +269,7 @@ public class BaseRatingBar extends LinearLayout implements IBaseRatingBar {
         return true;
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (isIndicator()) {
@@ -308,7 +310,7 @@ public class BaseRatingBar extends LinearLayout implements IBaseRatingBar {
                 return;
             }
 
-            if (!isPositionInRatingView(eventX, ratingBarPartialView)) {
+            if (isPositionInRatingView(eventX, ratingBarPartialView)) {
                 continue;
             }
 
@@ -329,7 +331,7 @@ public class BaseRatingBar extends LinearLayout implements IBaseRatingBar {
 
     private void handleClickEvent(float eventX) {
         for (RatingBarPartialView ratingBarPartialView : mRatingBarPartialViews) {
-            if (!isPositionInRatingView(eventX, ratingBarPartialView)) {
+            if (isPositionInRatingView(eventX, ratingBarPartialView)) {
                 continue;
             }
 

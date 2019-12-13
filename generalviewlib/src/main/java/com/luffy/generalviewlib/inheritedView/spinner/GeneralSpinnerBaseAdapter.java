@@ -38,7 +38,7 @@ public abstract class GeneralSpinnerBaseAdapter<T> extends BaseAdapter {
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.item_general_spinner, parent, false);
-            textView = (TextView) convertView.findViewById(R.id.tv_tinted_spinner);
+            textView = convertView.findViewById(R.id.tv_tinted_spinner);
             textView.setTextColor(textColor);
             if (backgroundSelector != 0) {
                 textView.setBackgroundResource(backgroundSelector);

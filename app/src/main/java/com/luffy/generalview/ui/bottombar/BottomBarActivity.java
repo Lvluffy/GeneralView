@@ -22,7 +22,7 @@ public class BottomBarActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ArrayAdapter<DemoBean> adapter = new ArrayAdapter<DemoBean>(this, android.R.layout.simple_list_item_1, mDatas);
+        ArrayAdapter<DemoBean> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mDatas);
         setListAdapter(adapter);
     }
 

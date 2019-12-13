@@ -12,7 +12,8 @@
         android:layout_marginTop="@dimen/y30"
         android:text="意向院校"
         android:textColor="#333333"
-        android:textSize="@dimen/text_size_24" />
+        android:textSize="@dimen/text_size_24"
+        android:layout_marginStart="@dimen/x15" />
 
     <LinearLayout
         android:layout_width="match_parent"

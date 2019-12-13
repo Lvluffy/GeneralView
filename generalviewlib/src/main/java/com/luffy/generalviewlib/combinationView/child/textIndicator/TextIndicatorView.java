@@ -35,10 +35,6 @@ public class TextIndicatorView extends LinearLayout {
     private TextView txtIndicator;
     private ImageView imgIndicator;
 
-    /**
-     * 默认值
-     */
-    private int defaultTextMaxLines = 2;
     private int defaultTextColor = Color.parseColor("#666666");
     private int defaultIndicatorLayoutBackground = Color.parseColor("#F6F6F6");
     private int defaultIndicatorTextColor = Color.parseColor("#666666");
@@ -124,7 +120,7 @@ public class TextIndicatorView extends LinearLayout {
         /**内容*/
         textLayoutGravity = attributes.getInt(R.styleable.TextIndicatorView_text_layout_gravity, Gravity.LEFT);
         /*最大行数*/
-        textMaxLines = attributes.getInt(R.styleable.TextIndicatorView_text_maxLines, defaultTextMaxLines);
+        textMaxLines = attributes.getInt(R.styleable.TextIndicatorView_text_maxLines, 2);
         /*内容*/
         textContent = attributes.getString(R.styleable.TextIndicatorView_text_content);
         /*颜色*/

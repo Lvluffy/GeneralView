@@ -32,7 +32,6 @@ public class TagView extends ViewGroup {
     private OnTagClickListener onTagClickListener;
 
     private int sizeWidth;
-    private int sizeHeight;
 
     private float mTagSize;
     private int mTagColor;
@@ -126,10 +125,9 @@ public class TagView extends ViewGroup {
         /**
          * 计算 ViewGroup 上级容器为其推荐的宽高
          */
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         sizeWidth = MeasureSpec.getSize(widthMeasureSpec);
-        sizeHeight = MeasureSpec.getSize(heightMeasureSpec);
+        int sizeHeight = MeasureSpec.getSize(heightMeasureSpec);
         //计算 childView 宽高
         measureChildren(widthMeasureSpec, heightMeasureSpec);
         initSingleLineView(widthMeasureSpec, heightMeasureSpec);

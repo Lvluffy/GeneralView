@@ -44,8 +44,8 @@ public class ViewPagerActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mVpContent = (ViewPager) findViewById(R.id.vp_content);
-        mBottomBarLayout = (BottomBarLayout) findViewById(R.id.bbl);
+        mVpContent = findViewById(R.id.vp_content);
+        mBottomBarLayout = findViewById(R.id.bbl);
     }
 
     private void initData() {

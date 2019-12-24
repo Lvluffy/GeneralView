@@ -32,8 +32,6 @@ public class BaseRatingBar extends LinearLayout implements IBaseRatingBar {
         void onRatingChange(BaseRatingBar ratingBar, float rating);
     }
 
-    public static final String TAG = "IRatingBar";
-
     private static final int MAX_CLICK_DISTANCE = 5;
     private static final int MAX_CLICK_DURATION = 200;
 
@@ -310,7 +308,7 @@ public class BaseRatingBar extends LinearLayout implements IBaseRatingBar {
                 return;
             }
 
-            if (isPositionInRatingView(eventX, ratingBarPartialView)) {
+            if (!isPositionInRatingView(eventX, ratingBarPartialView)) {
                 continue;
             }
 
@@ -331,7 +329,7 @@ public class BaseRatingBar extends LinearLayout implements IBaseRatingBar {
 
     private void handleClickEvent(float eventX) {
         for (RatingBarPartialView ratingBarPartialView : mRatingBarPartialViews) {
-            if (isPositionInRatingView(eventX, ratingBarPartialView)) {
+            if (!isPositionInRatingView(eventX, ratingBarPartialView)) {
                 continue;
             }
 

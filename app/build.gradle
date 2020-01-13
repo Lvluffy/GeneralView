@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     /**默认-选项配置*/
     defaultConfig {
-        applicationId rootProject.ext.applicationId
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
     }
     /**构建类型-配置*/
     buildTypes {
@@ -34,26 +34,22 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     /**support*/
-    compile "com.android.support.constraint:constraint-layout:$rootProject.supportConstraintLayout"
-    compile "com.android.support:recyclerview-v7:$rootProject.supportVersion"
-    compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
-    compile "com.android.support:support-v4:$rootProject.supportVersion"
+    implementation rootProject.ext.supportLibs
     /**仓库*/
     /*butterknife*/
-    compile 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     /**generalviewlib*/
-    compile project(':generalviewlib')
+    implementation project(':generalviewlib')
     /**自己的库*/
     /*通用Android*/
-    compile 'com.github.Lvluffy:GeneralAndroid:1.0.4'
+    implementation 'com.github.Lvluffy:GeneralAndroid:1.0.4'
     /*通用网络*/
-    compile 'com.github.Lvluffy:GeneralNetwork:1.0.2'
+    implementation 'com.github.Lvluffy:GeneralNetwork:1.0.2'
     /*通用工具*/
-    compile 'com.github.Lvluffy:GeneralUtils:1.0.9'
+    implementation 'com.github.Lvluffy:GeneralUtils:1.0.9'
     /*通用弹框*/
-    compile 'com.github.Lvluffy:GeneralDialog:1.0.6'
+    implementation 'com.github.Lvluffy:GeneralDialog:1.0.6'
 }

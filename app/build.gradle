@@ -40,6 +40,7 @@ dependencies {
     /**仓库*/
     /*butterknife*/
     implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     /**generalviewlib*/
     implementation project(':generalviewlib')

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!--直播中图标-->
+    <com.luffy.generalviewlib.customView.radarScan.RadarScanView
+        android:id="@+id/radarView"
+        android:layout_width="294dp"
+        android:layout_height="294dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        app:circleColor="#3D88FC"
+        app:circleNum="6"
+        app:showCross="true"
+        app:speed="5"
+        app:sweepColor="#3D88FC" />
+
+    <!--随机位置的文本框-->
+    <com.luffy.generalviewlib.customView.randomText.RandomTextView
+        android:id="@+id/random_textview"
+        android:layout_width="294dp"
+        android:layout_height="294dp"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>
+
+

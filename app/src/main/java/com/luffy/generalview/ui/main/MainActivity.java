@@ -11,6 +11,7 @@ import com.luffy.generalview.ui.bottombar.BottomBarActivity;
 import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
 import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
 import com.luffy.generalview.ui.playingIcon.PlayingIconActivity;
+import com.luffy.generalview.ui.radarScanRandomText.RadarScanViewRandomTextActivity;
 import com.luffy.generalview.ui.ratingBar.GeneralRatingBarActivity;
 import com.luffy.generalview.ui.spinner.SpinnerActivity;
 import com.luffy.generalview.ui.tag.GeneralTagActivity;
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn_playing_icon,
             R.id.btn_bottom_bar,
             R.id.btn_text_indicator,
-            R.id.btn_spinner
+            R.id.btn_spinner,
+            R.id.btn_radar_scan
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -94,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_spinner:
                 /*spinner*/
                 startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
+                break;
+            case R.id.btn_radar_scan:
+                /*RadarScan*/
+                startActivity(new Intent(MainActivity.this, RadarScanViewRandomTextActivity.class));
                 break;
         }
     }

@@ -14,14 +14,48 @@ allprojects {
 
 二、Module下的build.gradle文件下添加
 
+1.2.3之前
+
 dependencies {
-          compile 'com.github.Lvluffy:GeneralView:1.0.0'
+    
+    implementation 'com.github.Lvluffy:GeneralView:1.0.0'
+          
 }
 
-或者
+1.2.4之后
 
 dependencies {
-          implementation 'com.github.Lvluffy:GeneralView:1.0.0'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalamounteditlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalamounteditlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalamounteditlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalbottombarlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalbuttonlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalemptylib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalflipper:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalratingbarlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalspinnerlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generaltaglib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generaltextindicatorlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generalwheellib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:playingiconlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:radarscanlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:randomtextlib:1.2.4'
+          
 }
 
 ## 功能说明

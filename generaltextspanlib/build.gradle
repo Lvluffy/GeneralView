@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.Lvluffy'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    /**默认-选项配置*/
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    /**构建类型-配置*/
+    buildTypes {
+        debug {
+            //混淆
+            minifyEnabled false
+            //混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            //混淆
+            minifyEnabled false
+            //混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    /**构建时关闭错误或者警告提示 */
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    /**自定义aar的名字*/
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = outputFileName.replace(".aar", "-") + rootProject.ext.android.versionCode + ".aar"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}

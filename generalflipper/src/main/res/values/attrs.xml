@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用翻滚控件-->
+    <declare-styleable name="GeneralFlipper">
+        <!--根布局-->
+        <attr name="flipper_root_background_resource" format="reference" />
+        <attr name="flipper_root_width" format="dimension" />
+        <attr name="flipper_root_height" format="dimension" />
+        <attr name="flipper_root_marginLeft" format="dimension" />
+        <attr name="flipper_root_marginTop" format="dimension" />
+        <attr name="flipper_root_marginRight" format="dimension" />
+        <attr name="flipper_root_marginBottom" format="dimension" />
+        <attr name="flipper_root_paddingLeft" format="dimension" />
+        <attr name="flipper_root_paddingTop" format="dimension" />
+        <attr name="flipper_root_paddingRight" format="dimension" />
+        <attr name="flipper_root_paddingBottom" format="dimension" />
+
+        <!--左边图片-->
+        <attr name="flipper_left_icon_width" format="dimension" />
+        <attr name="flipper_left_icon_height" format="dimension" />
+        <attr name="flipper_left_icon_src" format="reference" />
+        <attr name="flipper_left_icon_marginLeft" format="dimension" />
+        <attr name="flipper_left_icon_marginRight" format="dimension" />
+        <attr name="flipper_left_icon_visibility" format="enum">
+            <enum name="visible" value="1" />
+            <enum name="gone" value="2" />
+            <enum name="invisible" value="3" />
+        </attr>
+
+        <!--右边图片-->
+        <attr name="flipper_right_icon_width" format="dimension" />
+        <attr name="flipper_right_icon_height" format="dimension" />
+        <attr name="flipper_right_icon_src" format="reference" />
+        <attr name="flipper_right_icon_marginLeft" format="dimension" />
+        <attr name="flipper_right_icon_marginRight" format="dimension" />
+        <attr name="flipper_right_icon_visibility" format="enum">
+            <enum name="visible" value="1" />
+            <enum name="gone" value="2" />
+            <enum name="invisible" value="3" />
+        </attr>
+
+        <!--中间ViewFlipper-->
+        <attr name="view_flipper_interval" format="integer" />
+        <attr name="view_flipper_inAnimation" format="reference" />
+        <attr name="view_flipper_outAnimation" format="reference" />
+        <attr name="view_flipper_autoStart" format="boolean" />
+
+        <!--TextView-->
+        <attr name="flipper_text_gravity" format="enum">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="center" value="3" />
+            <enum name="center_vertical" value="4" />
+            <enum name="center_horizontal" value="5" />
+        </attr>
+        <attr name="flipper_text_maxLines" format="integer" />
+        <attr name="flipper_text_color" format="color" />
+        <attr name="flipper_text_size" format="integer" />
+        <attr name="flipper_text_textStyle" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+            <enum name="bold_italic" value="3" />
+        </attr>
+        <attr name="flipper_text_lineSpacingExtra" format="dimension" />
+
+    </declare-styleable>
+</resources>

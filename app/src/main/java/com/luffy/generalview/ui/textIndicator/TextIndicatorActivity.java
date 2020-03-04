@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.luffy.generaltextindicatorlib.TextIndicatorView;
 import com.luffy.generalview.R;
-import com.luffy.generalviewlib.combinationView.child.textIndicator.TextIndicatorView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

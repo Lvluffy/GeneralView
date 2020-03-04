@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <com.luffy.generalviewlib.customView.bottomBar.BottomBarLayout
+    <com.luffy.generalbottombarlib.BottomBarLayout
         android:id="@+id/bbl"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -20,7 +20,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.luffy.generalviewlib.customView.bottomBar.BottomBarItem
+        <com.luffy.generalbottombarlib.BottomBarItem
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -34,7 +34,7 @@
             app:textColorSelected="@color/tab_selected_color"
             app:touchDrawable="@drawable/selector_bg" />
 
-        <com.luffy.generalviewlib.customView.bottomBar.BottomBarItem
+        <com.luffy.generalbottombarlib.BottomBarItem
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -49,7 +49,7 @@
             app:touchDrawable="@drawable/selector_bg"
             app:unreadThreshold="99" />
 
-        <com.luffy.generalviewlib.customView.bottomBar.BottomBarItem
+        <com.luffy.generalbottombarlib.BottomBarItem
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -63,7 +63,7 @@
             app:textColorSelected="@color/tab_selected_color"
             app:touchDrawable="@drawable/selector_bg" />
 
-        <com.luffy.generalviewlib.customView.bottomBar.BottomBarItem
+        <com.luffy.generalbottombarlib.BottomBarItem
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -77,6 +77,6 @@
             app:textColorSelected="@color/tab_selected_color"
             app:touchDrawable="@drawable/selector_bg" />
 
-    </com.luffy.generalviewlib.customView.bottomBar.BottomBarLayout>
+    </com.luffy.generalbottombarlib.BottomBarLayout>
 
 </LinearLayout>

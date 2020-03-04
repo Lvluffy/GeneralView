@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用按钮-->
+    <declare-styleable name="GeneralButton">
+        <!--根布局-->
+        <attr name="button_root_enable_true_background_resource" format="reference" />
+        <attr name="button_root_enable_false_background_resource" format="reference" />
+        <attr name="button_root_width" format="dimension" />
+        <attr name="button_root_height" format="dimension" />
+        <attr name="button_root_clickable" format="boolean" />
+        <!--文本-->
+        <attr name="button_text_color" format="color" />
+        <attr name="button_text_size" format="integer" />
+        <attr name="button_text_content" format="string|reference" />
+        <attr name="button_text_style" format="enum">
+            <enum name="normal" value="1" />
+            <enum name="bold" value="2" />
+            <enum name="italic" value="3" />
+        </attr>
+        <!--图片-->
+        <attr name="button_image_loadable" format="boolean" />
+    </declare-styleable>
+</resources>

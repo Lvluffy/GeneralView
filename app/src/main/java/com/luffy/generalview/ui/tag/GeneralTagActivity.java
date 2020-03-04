@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.luffy.generaldialoglib.toast.ToastBuilder;
+import com.luffy.generaltaglib.TagView;
 import com.luffy.generalview.R;
-import com.luffy.generalviewlib.customView.tag.TagView;
 
 import java.util.ArrayList;
 import java.util.List;

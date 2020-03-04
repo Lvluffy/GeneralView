@@ -5,12 +5,12 @@ import android.view.View;
 import com.google.gson.Gson;
 import com.luffy.generalandroidlib.android.list.loader.BaseLayerLoadMoreView;
 import com.luffy.generalandroidlib.template.listView.general.BaseLayerListActivity;
+import com.luffy.generalemptylib.GeneralEmpty;
 import com.luffy.generalutilslib.utils.DensityUtils;
 import com.luffy.generalutilslib.utils.RxTimerUtils;
 import com.luffy.generalview.R;
 import com.luffy.generalview.manager.TestDataManager;
 import com.luffy.generalview.model.GeneralEmptyBean;
-import com.luffy.generalviewlib.combinationView.child.empty.GeneralEmpty;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,1 +1,1 @@
-include ':app', ':generalviewlib'
+include ':app', ':generalbuttonlib', ':generalemptylib', ':generalflipper', ':generaltextindicatorlib', ':playingiconlib', ':radarscanlib', ':randomtextlib', ':generaltaglib', ':generalratingbarlib', ':generalbottombarlib', ':generalspinnerlib', ':generaltextspanlib', ':generaltextwatcherlib', ':generalwheellib', ':generalamounteditlib'

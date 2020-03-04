@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.luffy.generalflipper.GeneralFlipper;
 import com.luffy.generalview.R;
-import com.luffy.generalviewlib.combinationView.child.flipper.GeneralFlipper;
 
 import java.util.ArrayList;
 import java.util.List;

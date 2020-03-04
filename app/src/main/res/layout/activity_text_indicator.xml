@@ -19,7 +19,7 @@
         android:orientation="vertical"
         android:visibility="visible">
 
-        <com.luffy.generalviewlib.combinationView.child.textIndicator.TextIndicatorView
+        <com.luffy.generaltextindicatorlib.TextIndicatorView
             android:id="@+id/textIndicatorView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,8 +34,8 @@
             app:indicator_layout_marginTop="5dp"
             app:indicator_layout_padding="5dp"
             app:indicator_text_color="#FF5600"
-            app:indicator_text_expand="@string/txt_expand"
-            app:indicator_text_pack_up="@string/txt_pack_up"
+            app:indicator_text_expand="展开"
+            app:indicator_text_pack_up="收起"
             app:indicator_text_size="14"
             app:text_color="@color/colorPrimary"
             app:text_layout_gravity="right"

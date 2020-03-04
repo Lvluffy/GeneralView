@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <!--直播中图标-->
-    <com.luffy.generalviewlib.customView.playing.PlayingIcon
+    <com.luffy.playingiconlib.PlayingIcon
         android:id="@+id/playing_icon"
         android:layout_width="18dp"
         android:layout_height="15dp"

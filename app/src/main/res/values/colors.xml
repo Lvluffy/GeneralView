@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-
+    <!--主色调-->
+    <color name="colorPrimary">@color/color_5096F5</color>
+    <color name="colorPrimaryPressed">@color/color_5E98EE</color>
+    <!--generalColor（通用颜色值）-->
+    <color name="white">@color/color_FFFFFF</color>
+    <!--commonColor（常见颜色值）-->
+    <color name="color_5096F5">#5096F5</color>
+    <color name="color_50BDF5">#50BDF5</color>
+    <color name="color_5E98EE">#5E98EE</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_BBBBBB">#BBBBBB</color>
+    <color name="color_F6F6F6">#F6F6F6</color>
+    <color name="color_FFFFFF">#FFFFFF</color>
+    <color name="color_FAFAFA">#FAFAFA</color>
+    <!--tab-->
     <color name="tab_gb">#F3F5F4</color>
     <color name="tab_normal_color">#515051</color>
     <color name="tab_selected_color">#D33D3C</color>
+    <color name="tab_selector_grey">#DDDDDD</color>
 
-    <color name="unreadTextColor">#00ff00</color>
-    <color name="msgTextColor">#00ff00</color>
 </resources>

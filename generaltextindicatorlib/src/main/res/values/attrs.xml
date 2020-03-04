@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--文本指示器（收起、展开）-->
+    <declare-styleable name="TextIndicatorView">
+        <attr name="text_layout_gravity" format="enum">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="center" value="3" />
+            <enum name="center_vertical" value="4" />
+            <enum name="center_horizontal" value="5" />
+        </attr>
+        <attr name="text_maxLines" format="integer" />
+        <attr name="text_content" format="string" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="integer" />
+        <attr name="text_lineSpacingExtra" format="dimension" />
+
+        <attr name="indicator_layout_gravity" format="enum">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="center" value="3" />
+        </attr>
+        <attr name="indicator_layout_background_resource" format="reference" />
+        <attr name="indicator_layout_marginTop" format="dimension" />
+        <attr name="indicator_layout_marginBottom" format="dimension" />
+        <attr name="indicator_layout_padding" format="dimension" />
+
+        <attr name="indicator_text_expand" format="string" />
+        <attr name="indicator_text_pack_up" format="string" />
+        <attr name="indicator_text_color" format="color" />
+        <attr name="indicator_text_size" format="integer" />
+
+        <attr name="indicator_drawable_expand" format="reference" />
+        <attr name="indicator_drawable_pack_up" format="reference" />
+        <attr name="indicator_drawable_width" format="dimension" />
+        <attr name="indicator_drawable_height" format="dimension" />
+        <attr name="indicator_drawable_marginLeft" format="dimension" />
+    </declare-styleable>
+</resources>

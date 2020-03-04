@@ -6,7 +6,7 @@
     android:background="#000000">
 
     <!--直播中图标-->
-    <com.luffy.generalviewlib.customView.radarScan.RadarScanView
+    <com.luffy.radarscanlib.RadarScanView
         android:id="@+id/radarView"
         android:layout_width="294dp"
         android:layout_height="294dp"
@@ -19,7 +19,7 @@
         app:sweepColor="#3D88FC" />
 
     <!--随机位置的文本框-->
-    <com.luffy.generalviewlib.customView.randomText.RandomTextView
+    <com.luffy.randomtextlib.RandomTextView
         android:id="@+id/random_textview"
         android:layout_width="294dp"
         android:layout_height="294dp"

@@ -222,11 +222,11 @@ public class GeneralButton extends BaseCombinationView {
      */
     public void setEnable(boolean enable) {
         if (enable) {
-            layout.setBackgroundResource(getEnableTrue());
+            layout.setBackgroundResource(button_root_enable_true_background_resource);
             //没有禁用可以点击
             layout.setClickable(false);
         } else {
-            layout.setBackgroundResource(getEnableFalse());
+            layout.setBackgroundResource(button_root_enable_false_background_resource);
             //禁用时候不能点击
             layout.setClickable(true);
         }

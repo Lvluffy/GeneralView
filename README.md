@@ -27,11 +27,7 @@ dependencies {
 dependencies {
     
     implementation 'com.github.Lvluffy.GeneralView:generalamounteditlib:1.2.4'
-    
-    implementation 'com.github.Lvluffy.GeneralView:generalamounteditlib:1.2.4'
-    
-    implementation 'com.github.Lvluffy.GeneralView:generalamounteditlib:1.2.4'
-    
+       
     implementation 'com.github.Lvluffy.GeneralView:generalbottombarlib:1.2.4'
     
     implementation 'com.github.Lvluffy.GeneralView:generalbuttonlib:1.2.4'
@@ -47,6 +43,10 @@ dependencies {
     implementation 'com.github.Lvluffy.GeneralView:generaltaglib:1.2.4'
     
     implementation 'com.github.Lvluffy.GeneralView:generaltextindicatorlib:1.2.4'
+       
+    implementation 'com.github.Lvluffy.GeneralView:generaltextspanlib:1.2.4'
+    
+    implementation 'com.github.Lvluffy.GeneralView:generaltextwatcherlib:1.2.4'
     
     implementation 'com.github.Lvluffy.GeneralView:generalwheellib:1.2.4'
     

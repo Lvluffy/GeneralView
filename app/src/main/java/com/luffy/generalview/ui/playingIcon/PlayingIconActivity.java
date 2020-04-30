@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.luffy.generalview.R;
-import com.luffy.playingiconlib.PlayingIcon;
+import com.luffy.view.playingiconlib.PlayingIcon;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

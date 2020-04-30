@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.luffy.generaltaglib.TagView
+    <com.luffy.view.generaltaglib.TagView
         android:id="@+id/tag_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

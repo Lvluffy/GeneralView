@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.luffy.generalflipper.GeneralFlipper
+    <com.luffy.view.generalflipper.GeneralFlipper
         android:id="@+id/general_flipper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

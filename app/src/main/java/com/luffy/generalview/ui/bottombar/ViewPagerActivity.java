@@ -13,9 +13,9 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
-import com.luffy.generalbottombarlib.BottomBarItem;
-import com.luffy.generalbottombarlib.BottomBarLayout;
 import com.luffy.generalview.R;
+import com.luffy.view.generalbottombarlib.BottomBarItem;
+import com.luffy.view.generalbottombarlib.BottomBarLayout;
 
 import java.util.ArrayList;
 import java.util.List;

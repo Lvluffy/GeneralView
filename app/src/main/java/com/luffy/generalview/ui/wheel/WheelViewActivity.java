@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.luffy.generalview.R;
-import com.luffy.generalwheellib.WheelBean;
-import com.luffy.generalwheellib.WheelView;
+import com.luffy.view.generalwheellib.WheelBean;
+import com.luffy.view.generalwheellib.WheelView;
 
 import java.util.ArrayList;
 import java.util.List;

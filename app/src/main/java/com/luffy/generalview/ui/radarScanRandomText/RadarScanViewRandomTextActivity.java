@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.luffy.generalview.R;
-import com.luffy.radarscanlib.RadarScanView;
-import com.luffy.randomtextlib.RandomTextView;
+import com.luffy.view.radarscanlib.RadarScanView;
+import com.luffy.view.randomtextlib.RandomTextView;
 
 import java.util.Arrays;
 

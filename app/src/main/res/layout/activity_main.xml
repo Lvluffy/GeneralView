@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/y15">
 
     <!--转动控件-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_wheelView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
         app:button_text_size="14" />
 
     <!--消息轮动-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_flipper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
         app:button_text_size="14" />
 
     <!--空布局-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
         app:button_text_size="14" />
 
     <!--标签-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_tag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
         app:button_text_size="14" />
 
     <!--星级评分-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_ratingBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
         app:button_text_size="14" />
 
     <!--播放中控件-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_playing_icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
         app:button_text_size="14" />
 
     <!--底部栏-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
         app:button_text_size="14" />
 
     <!--文本指示器-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_text_indicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
         app:button_text_size="14" />
 
     <!--spinner-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
         app:button_text_size="14" />
 
     <!--RadarScan-->
-    <com.luffy.generalbuttonlib.GeneralButton
+    <com.luffy.view.generalbuttonlib.GeneralButton
         android:id="@+id/btn_radar_scan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

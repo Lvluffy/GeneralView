@@ -3,8 +3,8 @@ package com.luffy.generalview.ui.spinner;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.luffy.generalspinnerlib.GeneralSpinner;
 import com.luffy.generalview.R;
+import com.luffy.view.generalspinnerlib.GeneralSpinner;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

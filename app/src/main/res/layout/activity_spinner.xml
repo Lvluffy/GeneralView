@@ -6,7 +6,7 @@
     android:background="@android:color/darker_gray"
     android:orientation="vertical">
 
-    <com.luffy.generalspinnerlib.GeneralSpinner
+    <com.luffy.view.generalspinnerlib.GeneralSpinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="31dp"

@@ -3,14 +3,14 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.Lvluffy'
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion rootProject.android.compileSdkVersion
+    buildToolsVersion rootProject.android.buildToolsVersion
     /**默认-选项配置*/
     defaultConfig {
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
     }
     /**构建类型-配置*/
     buildTypes {
@@ -35,7 +35,7 @@ android {
     /**自定义aar的名字*/
     android.libraryVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = outputFileName.replace(".aar", "-") + rootProject.ext.android.versionCode + ".aar"
+            outputFileName = outputFileName.replace(".aar", "-") + rootProject.android.versionCode + ".aar"
         }
     }
 }

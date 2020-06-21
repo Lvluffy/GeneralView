@@ -84,6 +84,7 @@ public class GeneralEmptyActivity extends BaseLayerListActivity {
                             .setEmptyBtnWidthHeight(0, 0)
                             .setEmptyBtnMargin(0, DensityUtils.getInstance().dp2px(mContext, 10), 0, 0)
                             .setEmptyBtnPadding(DensityUtils.getInstance().dp2px(mContext, 30), DensityUtils.getInstance().dp2px(mContext, 10), DensityUtils.getInstance().dp2px(mContext, 30), DensityUtils.getInstance().dp2px(mContext, 10))
+                            .setEmptyBtnBackground(R.drawable.bg_radius_ture_stroke_false_fff5e7_selector)
                             .setEmptyBtn("提交", new GeneralEmpty.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {

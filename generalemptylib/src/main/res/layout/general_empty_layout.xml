@@ -34,7 +34,6 @@
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:background="@drawable/general_empty_normal_full_radius_stroke_false_primary_selector"
         android:ellipsize="end"
         android:gravity="center"
         android:lines="1"

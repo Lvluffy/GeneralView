@@ -49,7 +49,7 @@ public class GeneralTextSpanHelper {
             SpannableStringBuilder mSpannableStringBuilder = new SpannableStringBuilder(mCharSequence);
             for (URLSpan urlSpan : urlSpans) {
                 String url = urlSpan.getURL();
-                if (url.indexOf("http://") == 0) {
+                if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
                     GeneralHyperlinkSpan mGeneralHyperlinkSpan = new GeneralHyperlinkSpan(url, mBaselayerSpanInterface);
                     mSpannableStringBuilder.setSpan(mGeneralHyperlinkSpan, spannable.getSpanStart(urlSpan), spannable.getSpanEnd(urlSpan), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
                 }

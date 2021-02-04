@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.text.Html;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -67,12 +65,12 @@ public class TextIndicatorView extends LinearLayout {
     int indicatorDrawableHeight;
     int indicatorDrawableMarginLeft;
 
-    public TextIndicatorView(Context context, @Nullable AttributeSet attrs) {
+    public TextIndicatorView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public TextIndicatorView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public TextIndicatorView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
@@ -133,7 +131,8 @@ public class TextIndicatorView extends LinearLayout {
         /*位置*/
         indicatorLayoutGravity = attributes.getInt(R.styleable.TextIndicatorView_indicator_layout_gravity, Gravity.RIGHT);
         /*背景色*/
-        indicatorLayoutBackgroundResource = attributes.getResourceId(R.styleable.TextIndicatorView_indicator_layout_background_resource, defaultIndicatorLayoutBackground);
+        indicatorLayoutBackgroundResource = attributes.getResourceId(R.styleable.TextIndicatorView_indicator_layout_background_resource,
+                defaultIndicatorLayoutBackground);
         /*外边距*/
         indicatorLayoutMarginTop = attributes.getDimensionPixelSize(R.styleable.TextIndicatorView_indicator_layout_marginTop, 0);
         indicatorLayoutMarginBottom = attributes.getDimensionPixelSize(R.styleable.TextIndicatorView_indicator_layout_marginBottom, 0);
@@ -150,9 +149,11 @@ public class TextIndicatorView extends LinearLayout {
         indicatorTextSize = attributes.getInteger(R.styleable.TextIndicatorView_indicator_text_size, 14);
         /**指示器图片*/
         /*图片-展开*/
-        indicatorDrawableExpand = attributes.getResourceId(R.styleable.TextIndicatorView_indicator_drawable_expand, R.drawable.general_text_indicator_expand);
+        indicatorDrawableExpand = attributes.getResourceId(R.styleable.TextIndicatorView_indicator_drawable_expand,
+                R.drawable.general_text_indicator_expand);
         /*内容-收起*/
-        indicatorDrawablePackUp = attributes.getResourceId(R.styleable.TextIndicatorView_indicator_drawable_pack_up, R.drawable.general_text_indicator_pack_up);
+        indicatorDrawablePackUp = attributes.getResourceId(R.styleable.TextIndicatorView_indicator_drawable_pack_up,
+                R.drawable.general_text_indicator_pack_up);
         /*布局宽高*/
         indicatorDrawableWidth = attributes.getDimensionPixelSize(R.styleable.TextIndicatorView_indicator_drawable_width, 14);
         indicatorDrawableHeight = attributes.getDimensionPixelSize(R.styleable.TextIndicatorView_indicator_drawable_height, 14);
@@ -237,7 +238,6 @@ public class TextIndicatorView extends LinearLayout {
      */
     private void handlerBusines() {
         txtContent.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onGlobalLayout() {
                 int lines = txtContent.getLineCount();
@@ -246,7 +246,9 @@ public class TextIndicatorView extends LinearLayout {
                 } else {
                     layoutIndicator.setVisibility(View.GONE);
                 }
-                txtContent.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    txtContent.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
             }
         });
         layoutIndicator.setOnClickListener(new OnClickListener() {

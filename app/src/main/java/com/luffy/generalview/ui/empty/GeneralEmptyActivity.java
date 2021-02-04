@@ -79,6 +79,7 @@ public class GeneralEmptyActivity extends BaseLayerListActivity {
                     View emptyView = new GeneralEmpty(mContext)
                             .setEmptyImg(R.mipmap.ic_launcher)
                             .setEmptyImgMargin(0, DensityUtils.getInstance().dp2px(mContext, 50), 0, 0)
+                            .setEmptyTxtColor(R.color.color_50BDF5)
                             .setEmptyTxt("暂无数据")
                             .setEmptyTxtMargin(0, DensityUtils.getInstance().dp2px(mContext, 10), 0, 0)
                             .setEmptyBtnWidthHeight(0, 0)

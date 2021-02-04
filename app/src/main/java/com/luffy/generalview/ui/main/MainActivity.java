@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.luffy.generalview.R;
+import com.luffy.generalview.ui.amountEditText.AmountEditTextActivity;
 import com.luffy.generalview.ui.bottombar.BottomBarActivity;
 import com.luffy.generalview.ui.empty.GeneralEmptyActivity;
 import com.luffy.generalview.ui.flipper.GeneralFlipperActivity;
@@ -50,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn_bottom_bar,
             R.id.btn_text_indicator,
             R.id.btn_spinner,
-            R.id.btn_radar_scan
+            R.id.btn_radar_scan,
+            R.id.btn_amount_edit_text
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -100,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_radar_scan:
                 /*RadarScan*/
                 startActivity(new Intent(MainActivity.this, RadarScanViewRandomTextActivity.class));
+                break;
+            case R.id.btn_amount_edit_text:
+                /*金额输入框*/
+                startActivity(new Intent(MainActivity.this, AmountEditTextActivity.class));
                 break;
         }
     }

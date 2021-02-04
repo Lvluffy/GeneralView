@@ -3,7 +3,6 @@ package com.luffy.view.generalratingbarlib.child;
 import android.content.Context;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
 import com.luffy.view.generalratingbarlib.base.BaseRatingBar;
@@ -29,12 +28,12 @@ public class BaseRatingBarAnimation extends BaseRatingBar {
         init();
     }
 
-    protected BaseRatingBarAnimation(Context context, @Nullable AttributeSet attrs) {
+    protected BaseRatingBarAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    protected BaseRatingBarAnimation(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    protected BaseRatingBarAnimation(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

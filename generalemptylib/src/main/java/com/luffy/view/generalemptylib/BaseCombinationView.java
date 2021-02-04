@@ -1,7 +1,6 @@
 package com.luffy.view.generalemptylib;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +20,7 @@ public abstract class BaseCombinationView extends LinearLayout implements IBaseC
         this.mContext = context;
     }
 
-    public BaseCombinationView(Context context, @Nullable AttributeSet attrs) {
+    public BaseCombinationView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.mContext = context;
         init(attrs);

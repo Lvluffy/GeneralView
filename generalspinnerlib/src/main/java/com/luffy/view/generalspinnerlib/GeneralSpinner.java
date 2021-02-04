@@ -56,40 +56,35 @@ public class GeneralSpinner extends AppCompatTextView {
     private int arrowColor;
     private int arrowColorDisabled;
     private int textColor; //字体颜色
-    private Context context;
 
     public GeneralSpinner(Context context) {
         super(context);
-        this.context = context;
-        init(context, null);
+        init(null);
     }
 
     public GeneralSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.context = context;
-        init(context, attrs);
+        init(attrs);
     }
 
     public GeneralSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        this.context = context;
-        init(context, attrs);
+        init(attrs);
     }
 
     /**
      * 构建
      *
-     * @param context
      * @param attrs
      */
-    private void init(Context context, AttributeSet attrs) {
+    private void init(AttributeSet attrs) {
         //获取attrs.xml中设置的参数
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.GeneralSpinner);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.GeneralSpinner);
 
         //默认色设置
         int defaultColor = getTextColors().getDefaultColor();
 
-        boolean rtl = Utils.isRtl(context);
+        boolean rtl = Utils.isRtl(getContext());
 
         try {
             //背景色 默认白色
@@ -100,7 +95,8 @@ public class GeneralSpinner extends AppCompatTextView {
             arrowColor = typedArray.getColor(R.styleable.GeneralSpinner_ms_arrow_tint, textColor);
             hideArrow = typedArray.getBoolean(R.styleable.GeneralSpinner_ms_hide_arrow, false);
             popupWindowMaxHeight = typedArray.getDimensionPixelSize(R.styleable.GeneralSpinner_ms_popupwindow_maxheight, 0);
-            popupWindowHeight = typedArray.getLayoutDimension(R.styleable.GeneralSpinner_ms_popupwindow_height, WindowManager.LayoutParams.WRAP_CONTENT);
+            popupWindowHeight = typedArray.getLayoutDimension(R.styleable.GeneralSpinner_ms_popupwindow_height,
+                    WindowManager.LayoutParams.WRAP_CONTENT);
             arrowColorDisabled = Utils.lighter(arrowColor, 0.8f);
         } finally {
             typedArray.recycle();
@@ -130,7 +126,7 @@ public class GeneralSpinner extends AppCompatTextView {
          *
          */
         if (!hideArrow) {
-            arrowDrawable = ContextCompat.getDrawable(context, R.drawable.general_spinner_arrow).mutate();
+            arrowDrawable = ContextCompat.getDrawable(getContext(), R.drawable.general_spinner_arrow).mutate();
             arrowDrawable.setColorFilter(arrowColor, PorterDuff.Mode.SRC_IN);
             if (rtl) {
                 setCompoundDrawablesWithIntrinsicBounds(arrowDrawable, null, null, null);
@@ -140,7 +136,7 @@ public class GeneralSpinner extends AppCompatTextView {
         }
 
         //创建布局 使用listView控件展示items
-        listView = new ListView(context);
+        listView = new ListView(getContext());
         listView.setId(getId());
         listView.setDivider(new ColorDrawable(Color.GRAY));
         listView.setDividerHeight(1);
@@ -159,7 +155,7 @@ public class GeneralSpinner extends AppCompatTextView {
         });
 
         //使用PopupWindow控件承载数据
-        popupWindow = new PopupWindow(context);
+        popupWindow = new PopupWindow(getContext());
         popupWindow.setContentView(listView);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
@@ -167,9 +163,9 @@ public class GeneralSpinner extends AppCompatTextView {
         //设置背景色、阴影
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             popupWindow.setElevation(16);
-            popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.general_spinner_popwindow_bg));
+            popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.general_spinner_popwindow_bg));
         } else {
-            popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.general_spinner_popwindow_bg));
+            popupWindow.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.general_spinner_popwindow_bg));
         }
 
         //设置背景，默认是白色

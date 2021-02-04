@@ -42,6 +42,4 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    /**support*/
-    compileOnly rootProject.supportDepends["appcompat-v7" ]
 }

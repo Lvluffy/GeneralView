@@ -1,7 +1,6 @@
 package com.luffy.view.generalamounteditlib;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Spanned;
@@ -9,13 +8,14 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
+import android.widget.EditText;
 
 /**
  * Created by lvlufei on 2018/7/17
  *
  * @desc 金额输入框，只能输入两位小数
  */
-public class AmountEditText extends AppCompatEditText implements TextWatcher {
+public class AmountEditText extends EditText implements TextWatcher {
 
     public AmountEditText(Context context, AttributeSet attrs) {
         super(context, attrs);

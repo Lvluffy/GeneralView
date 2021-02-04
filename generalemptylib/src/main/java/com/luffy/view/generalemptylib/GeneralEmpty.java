@@ -2,8 +2,7 @@ package com.luffy.view.generalemptylib;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -30,7 +29,7 @@ public class GeneralEmpty extends BaseCombinationView {
         super(context);
     }
 
-    public GeneralEmpty(Context context, @Nullable AttributeSet attrs) {
+    public GeneralEmpty(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -108,7 +107,7 @@ public class GeneralEmpty extends BaseCombinationView {
 
     public GeneralEmpty setEmptyTxtColor(int color) {
         emptyTxt.setVisibility(View.VISIBLE);
-        emptyTxt.setTextColor(ContextCompat.getColor(mContext, color));
+        emptyTxt.setTextColor(Build.VERSION.SDK_INT >= 23 ? mContext.getColor(color) : mContext.getResources().getColor(color));
         return this;
     }
 
@@ -139,7 +138,7 @@ public class GeneralEmpty extends BaseCombinationView {
 
     public GeneralEmpty setEmptyBtnColor(int color) {
         emptyBtn.setVisibility(View.VISIBLE);
-        emptyBtn.setTextColor(ContextCompat.getColor(mContext, color));
+        emptyBtn.setTextColor(Build.VERSION.SDK_INT >= 23 ? mContext.getColor(color) : mContext.getResources().getColor(color));
         return this;
     }
 

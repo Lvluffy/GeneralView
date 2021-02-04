@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -90,7 +89,7 @@ public class GeneralFlipper extends BaseCombinationView {
         super(context);
     }
 
-    public GeneralFlipper(Context context, @Nullable AttributeSet attrs) {
+    public GeneralFlipper(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -115,7 +114,8 @@ public class GeneralFlipper extends BaseCombinationView {
         flipper_root_background_resource = attributes.getResourceId(R.styleable.GeneralFlipper_flipper_root_background_resource, defaultBackground);
         /*布局宽高*/
         flipper_root_width = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_root_width, LinearLayout.LayoutParams.MATCH_PARENT);
-        flipper_root_height = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_root_height, LinearLayout.LayoutParams.WRAP_CONTENT);
+        flipper_root_height = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_root_height,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
         /*外边距*/
         flipper_root_marginLeft = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_root_marginLeft, 0);
         flipper_root_marginTop = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_root_marginTop, 0);
@@ -129,8 +129,10 @@ public class GeneralFlipper extends BaseCombinationView {
 
         /**左边图片*/
         /*布局宽高*/
-        flipper_left_icon_width = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_left_icon_width, LinearLayout.LayoutParams.WRAP_CONTENT);
-        flipper_left_icon_height = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_left_icon_height, LinearLayout.LayoutParams.WRAP_CONTENT);
+        flipper_left_icon_width = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_left_icon_width,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        flipper_left_icon_height = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_left_icon_height,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
         /*图片资源*/
         flipper_left_icon_src = attributes.getResourceId(R.styleable.GeneralFlipper_flipper_left_icon_src, defaultImg);
         /*外边距*/
@@ -141,8 +143,10 @@ public class GeneralFlipper extends BaseCombinationView {
 
         /**右边图片*/
         /*布局宽高*/
-        flipper_right_icon_width = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_right_icon_width, LinearLayout.LayoutParams.WRAP_CONTENT);
-        flipper_right_icon_height = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_right_icon_height, LinearLayout.LayoutParams.WRAP_CONTENT);
+        flipper_right_icon_width = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_right_icon_width,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        flipper_right_icon_height = attributes.getDimensionPixelSize(R.styleable.GeneralFlipper_flipper_right_icon_height,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
         /*图片资源*/
         flipper_right_icon_src = attributes.getResourceId(R.styleable.GeneralFlipper_flipper_right_icon_src, defaultImg);
         /*外边距*/

@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -69,14 +68,14 @@ public class PlayingIcon extends View {
         init();
     }
 
-    public PlayingIcon(Context context, @Nullable AttributeSet attrs) {
+    public PlayingIcon(Context context, AttributeSet attrs) {
         super(context, attrs);
         //取出自定义属性
         initAttrs(context, attrs);
         init();
     }
 
-    public PlayingIcon(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public PlayingIcon(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initAttrs(context, attrs);
         init();
@@ -202,7 +201,8 @@ public class PlayingIcon extends View {
                     try {
                         for (int j = 0; j < playingIcon.pointers.size(); j++) { //循环改变每个指针高度
                             float rate = (float) Math.abs(Math.sin(i + j));//利用正弦有规律的获取0~1的数。
-                            playingIcon.pointers.get(j).setHeight((playingIcon.basePointY - playingIcon.getPaddingTop()) * rate); //rate 乘以 可绘制高度，来改变每个指针的高度
+                            playingIcon.pointers.get(j).setHeight((playingIcon.basePointY - playingIcon.getPaddingTop()) * rate); //rate 乘以
+                            // 可绘制高度，来改变每个指针的高度
                         }
                         Thread.sleep(playingIcon.pointerSpeed);//休眠一下下，可自行调节
                         if (playingIcon.isPlaying) { //控制开始/暂停

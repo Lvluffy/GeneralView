@@ -4,8 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.animation.Animation;
@@ -55,7 +54,7 @@ public class GeneralButton extends BaseCombinationView {
         super(context);
     }
 
-    public GeneralButton(Context context, @Nullable AttributeSet attrs) {
+    public GeneralButton(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -167,7 +166,7 @@ public class GeneralButton extends BaseCombinationView {
      * @param color 颜色
      */
     public void setTextColor(int color) {
-        textView.setTextColor(ContextCompat.getColor(mContext, color));
+        textView.setTextColor(Build.VERSION.SDK_INT >= 23 ? mContext.getColor(color) : mContext.getResources().getColor(color));
     }
 
     /**
